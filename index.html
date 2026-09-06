@@ -358,6 +358,14 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
 </select>
     </div>
 
+    <div class="filter-item" ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}"  style=" align-items: center;">
+      <label>Min. Bonus Oranı</label>
+<input ng-model="allMinerMinBonusSearch"ng-disabled="!isLoadedUser" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)" style="width: 55px; align-items: center;">
+</input>/
+<input ng-model="allMinerMaxBonusSearch"ng-disabled="!isLoadedUser" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)" style="width: 55px;">
+</input>
+    </div>
+
     <div class="filter-item">
       <label>Paketler</label>
 <select ng-model="allMinerCollectionId" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
