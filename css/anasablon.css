@@ -7,6 +7,80 @@ background: red;
 	animation: animated-border 1.5s infinite;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   UI BOOTSTRAP TYPEAHEAD DROPDOWN (RCHesapla UYUMLU)
+   ========================================== */
+
+/* Dropdown Konteynırı */
+.dropdown-menu {
+  background-color: #111c35 !important;
+  border: 1px solid #233354 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+  padding: 6px 0 !important;
+  margin-top: 6px !important;
+  z-index: 1050 !important;
+  overflow: hidden !important;
+}
+
+/* Her Bir Öneri Elemanı */
+.dropdown-menu > li > a,
+.uib-typeahead-match > a {
+  color: #e2e8f0 !important;
+  padding: 10px 16px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  display: block !important;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  background-color: transparent !important;
+}
+
+/* Hover veya Yön Tuşlarıyla Odaklanma (Active State) */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: #1d2d50 !important;
+  color: #60a5fa !important; /* Mavi vurgu rengi */
+  outline: none !important;
+}
+
+/* Arama sırasında eşleşen kalın metinler */
+.dropdown-menu strong {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================
+   TARAYICI OTOMATİK DOLDURMA (AUTOFILL) DÜZELTMESİ
+   ========================================== */
+/* Chrome/Edge/Safari tarayıcılarının arka planı sarı/beyaz yapmasını engeller */
+.input-with-history input:-webkit-autofill,
+.input-with-history input:-webkit-autofill:hover, 
+.input-with-history input:-webkit-autofill:focus,
+.input-with-history input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0b1426 inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+
 .rc-horizontal-form {
   margin-top: 15px;
 }
