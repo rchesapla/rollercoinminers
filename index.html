@@ -161,42 +161,6 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
            ng-focus="onInputFocus()"
            ng-blur="onInputBlur()"
            autocomplete="off"/>
-
-    <div class="history-dropdown-menu" 
-         ng-show="isHistoryOpen && userHistory.length > 0"
-         style="position: absolute; top: 100%; left: 0; right: 0; z-index: 999; background: #1a1e29; border: 1px solid #2b3245; border-radius: 8px; margin-top: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); overflow: hidden;">
-      
-      <div class="history-header" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 11px; color: #8a94a6;">
-        <span><i class="fas fa-history" style="margin-right: 5px;">="color: #4f80ff;"></i> Son Aramalar</span>
-        <a href="javascript:void(0)" 
-           ng-click="clearAllHistory($event)" 
-           style="color: #ff5252; text-decoration: none; font-size: 10px; opacity: 0.8;">
-          Temizle
-        </a>
-      </div>
-
-      <div class="history-list" style="max-height: 200px; overflow-y: auto;">
-        <div class="history-item" 
-             ng-repeat="name in userHistory track by $index"
-             ng-mousedown="selectFromHistory(name)"
-             style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.02); transition: background 0.2s;"
-             onmouseover="this.style.background='rgba(255,255,255,0.06)'"
-             onmouseout="this.style.background='transparent'">
-          
-          <div style="display: flex; align-items: center; gap: 8px; color: #e1e4ed; font-size: 13px;">
-            <i class="fas fa-user-clock" style="font-size: 11px; opacity: 0.5;"></i>
-            <span>{{name}}</span>
-          </div>
-
-          <i class="fas fa-times history-delete-btn" 
-             title="Sil"
-             ng-mousedown="removeFromHistory($event, name)"
-             style="color: #8a94a6; font-size: 12px; padding: 4px 6px; border-radius: 4px; opacity: 0.6;"
-             onmouseover="this.style.opacity='1'; this.style.color='#ff5252';"
-             onmouseout="this.style.opacity='0.6'; this.style.color='#8a94a6';"></i>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="player-no-results" ng-if="playerSearchNoResults">
