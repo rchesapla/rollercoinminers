@@ -25,13 +25,3 @@
 * **API / Veri Kaynağı:** RollerCoin miner ve pazar veri yapıları
 * **Font & Icon:** Google Fonts, Font Awesome / Line Icons
 * **Hosting:** GitHub Pages
-
----
-
-## 🚀 Yerel Kurulum & Çalıştırma
-
-Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
-
-1. **Repoyu klonlayın:**
-   ```bash
-   git clone [https://github.com/rchesapla/sayfa.git](https://github.com/rchesapla/sayfa.git)
