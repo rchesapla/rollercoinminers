@@ -1,0 +1,77 @@
+.modern-general-wrapper{
+  margin-top:20px;
+}
+
+.modern-general-header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.modern-general-header h4{
+  color:#00e5ff;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.modern-general-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:20px;
+}
+
+.modern-coin-card{
+  background:linear-gradient(145deg,#0f1630,#111a3a);
+  border:1px solid rgba(0,229,255,0.3);
+  border-radius:14px;
+  padding:20px;
+  transition:0.3s;
+  position:relative;
+}
+
+.modern-coin-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 15px rgba(0,229,255,0.4);
+  border-color:#00e5ff;
+}
+
+.coin-header{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.coin-name{
+  font-size:20px;
+  font-weight:700;
+  color:#00e5ff;
+}
+
+.coin-stat{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-size:14px;
+  color:#cfd8ff;
+}
+
+.coin-stat strong{
+  color:#ffffff;
+  font-weight:600;
+}
+
+
+
+.donation-box {
+    margin-top: 20px;
+}
+
+.donation-results {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.donation-results div {
+    margin: 4px 0;
+}

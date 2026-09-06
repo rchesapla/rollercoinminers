@@ -1,0 +1,90 @@
+/* ===== SELECTED PLAYER CHIP ===== */
+
+.player-select-wrapper {
+  width: 100%;
+}
+
+.selected-player {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 4px 12px rgba(37, 99, 235, 0.4);
+
+  transition: all 0.2s ease;
+}
+
+.selected-player:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+
+/* ===== PLAYER NO RESULTS ===== */
+
+.player-no-results {
+  margin-top: 20px;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+
+  background: rgba(20, 20, 35, 0.7);
+  border: 1px solid rgba(108, 76, 255, 0.3);
+
+  backdrop-filter: blur(8px);
+
+  animation: fadeInUp 0.35s ease;
+}
+
+.no-results-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.no-results-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #b84dff;
+  margin-bottom: 6px;
+}
+
+.no-results-text {
+  color: #a9accf;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.no-results-btn {
+  background: linear-gradient(135deg, #6c4cff, #b84dff);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.no-results-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(184, 77, 255, 0.6);
+}
+
+/* animasyon */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

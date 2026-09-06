@@ -1,0 +1,646 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="miningApp">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--===============================================================================================-->
+<title>RCHesapla - Miner Listesi</title>
+<meta name="description" content="Rollercoin kazım gücü hesaplama aracı. Günlük, haftalık, aylık ve yıllık kazanç hesapla. Çekim süresi, miner bonusu ve gerçek zamanlı ağ gücü analizi ile en doğru Rollercoin hesaplayıcı.">
+<meta name="author" content="Fatih ÇELİK">
+<meta name="keywords" content="
+rollercoin hesaplama,
+rollercoin kazım gücü hesaplama,
+rollercoin calculator,
+rollercoin mining calculator,
+rollercoin günlük kazanç,
+rollercoin çekim süresi hesaplama,
+rollercoin miner bonus hesaplama,
+rollercoin power calculator,
+rollercoin türk hesaplama aracı,
+rollercoin kazanç analizi
+">
+<link rel="shortcut icon" href="img/logov2.png" type="image/x-icon">
+<meta property="og:title" content="Rollercoin Hesaplama Aracı – Kazım Gücü & Kazanç Analizi">
+<meta property="og:description" content="Rollercoin kazım gücünü hesapla, günlük kazancını öğren, çekim süresini analiz et. Türkiye'nin en gelişmiş Rollercoin hesaplayıcısı.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rchesapla.github.io/">
+<meta property="og:image" content="https://rchesapla.github.io/img/logo.png">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="./css/anasablon.css">
+<link rel="stylesheet" href="./css/genelkazanc.css">
+<link rel="stylesheet" href="./css/profil.css">
+<link rel="stylesheet" href="./css/tablo.css">
+<link rel="stylesheet" href="./css/fonts.css">
+<link rel="stylesheet" href="./css/minerlistesi.css">
+<link rel="stylesheet" href="./css/ustbar.css">
+<link rel="stylesheet" href="./css/altbar.css">
+<link rel="stylesheet" href="./css/paracekmelistesi.css">
+<link rel="stylesheet" href="./css/yukleniyor.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="./css/input.css">
+<link rel="stylesheet" href="./css/button.css">
+<link rel="stylesheet" href="./css/checkbox.css">
+<!--===============================================================================================-->
+<meta name="google-adsense-account" content="ca-pub-6469916074236350">
+<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+<!--===============================================================================================-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+<!--===============================================================================================-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spark-md5/3.0.0/spark-md5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<!--===============================================================================================-->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<!--===============================================================================================-->
+<script src="https://wminerrc.github.io/calculator/data/basic_miners.js"></script>
+<script src="https://wminerrc.github.io/calculator/data/merge_miners.js"></script>
+<script src="https://wminerrc.github.io/calculator/data/old/merge_miners.js"></script>
+<script src="https://wminerrc.github.io/calculator/data/components.js"></script>
+<!--===============================================================================================-->
+<script src="js/app.js"></script>
+<script src="js/firebase-db-service.js"></script>
+<!--===============================================================================================-->
+<script src="js/services.js"></script>
+<script src="js/user-miner-service.js"></script>
+<script src="js/miner-service.js"></script>
+<script src="js/dilsecenegi.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<!--===============================================================================================-->
+</head>
+<!--===============================================================================================-->
+<body ng-controller="MiningController">
+<!--===============================================================================================-->
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-6469916074236350"></amp-auto-ads>
+<!--===============================================================================================-->
+<!-- LOADER -->
+<!--div class="rc-loader" ng-show="isLoading">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p data-i18n="yukleniyor">Yükleniyor...</p>
+  </div>
+</div-->
+
+
+<div class="rc-wrapper">
+
+  <!-- ÜST BAR -->
+<header class="rc-topbar rc-topbar-roller">
+
+  <div class="topbar-left">
+
+    <div class="rc-logo">
+      <img src="img/logo.png">
+      <span class="logo-text">RCHesapla</span>
+    </div>
+	
+  </div>
+</header>
+
+
+
+  <!-- ANA İÇERİK -->
+  <main class="rc-main">
+
+    <!-- SOL PANEL -->
+    <aside class="rc-sidebar">
+
+  <div class="modern-general-header">
+    <h4 class="rc-title">RC BİLGİLER</h4>
+  </div>
+
+      <div class="rc-card">
+	<div class="rc-clock-advanced">
+
+  <div class="clock-main">
+    <i class="fas fa-clock"></i>
+    <span id="clockTime">--:--:--</span>
+  </div>
+
+  <div class="clock-date" id="clockDate">
+    -- -- ----
+  </div>
+
+  <!--div class="clock-controls">
+    <button onclick="setClockMode('TR')">TR</button>
+    <button onclick="setClockMode('UTC')">UTC</button>
+    <button onclick="setClockMode('LOCAL')">LOCAL</button>
+  </div--!>
+
+</div>
+
+<div class="rc-horizontal-form">
+
+  <div class="rc-form-grid" ng-if="!hasUserParam">
+
+<div class="rc-input-group" style="position: relative;">
+  <label>RC Kul. Adı</label>
+  
+  <div class="input-with-history" style="position: relative;">
+    <input type="text"
+           ng-model="userSearchText" 
+           placeholder="Örn: FthCLK" 
+           typeahead-wait-ms="200"
+           uib-typeahead="player as player.code for player in getPlayerByName($viewValue)"
+           typeahead-no-results="playerSearchNoResults"
+           typeahead-on-select="onSelectPlayer($item, $model, $label, $event)"
+           typeahead-loading="loading"
+           ng-focus="onInputFocus()"
+           ng-blur="onInputBlur()"
+           autocomplete="off"/>
+
+    <div class="history-dropdown-menu" 
+         ng-show="isHistoryOpen && userHistory.length > 0"
+         style="position: absolute; top: 100%; left: 0; right: 0; z-index: 999; background: #1a1e29; border: 1px solid #2b3245; border-radius: 8px; margin-top: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); overflow: hidden;">
+      
+      <div class="history-header" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 11px; color: #8a94a6;">
+        <span><i class="fas fa-history" style="margin-right: 5px;">="color: #4f80ff;"></i> Son Aramalar</span>
+        <a href="javascript:void(0)" 
+           ng-click="clearAllHistory($event)" 
+           style="color: #ff5252; text-decoration: none; font-size: 10px; opacity: 0.8;">
+          Temizle
+        </a>
+      </div>
+
+      <div class="history-list" style="max-height: 200px; overflow-y: auto;">
+        <div class="history-item" 
+             ng-repeat="name in userHistory track by $index"
+             ng-mousedown="selectFromHistory(name)"
+             style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.02); transition: background 0.2s;"
+             onmouseover="this.style.background='rgba(255,255,255,0.06)'"
+             onmouseout="this.style.background='transparent'">
+          
+          <div style="display: flex; align-items: center; gap: 8px; color: #e1e4ed; font-size: 13px;">
+            <i class="fas fa-user-clock" style="font-size: 11px; opacity: 0.5;"></i>
+            <span>{{name}}</span>
+          </div>
+
+          <i class="fas fa-times history-delete-btn" 
+             title="Sil"
+             ng-mousedown="removeFromHistory($event, name)"
+             style="color: #8a94a6; font-size: 12px; padding: 4px 6px; border-radius: 4px; opacity: 0.6;"
+             onmouseover="this.style.opacity='1'; this.style.color='#ff5252';"
+             onmouseout="this.style.opacity='0.6'; this.style.color='#8a94a6';"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player-no-results" ng-if="playerSearchNoResults">
+    <div class="no-results-icon">🔍</div>
+    <h4 class="no-results-title">Oyuncu bulunamadı</h4>
+    <p class="no-results-text">
+      Aradığınız kullanıcı mevcut değil.
+      Lütfen farklı bir isim deneyin.
+    </p>
+  </div>
+</div>
+
+  </div>
+
+<div class="checkbox-group modern-btn-group" style="display: flex; flex-direction: column; gap: 8px;">
+  
+  <button class="rc-modern-btn room-link-btn" 
+           ng-click="resetValues()"
+          style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
+    <i class="fas fa-sync-alt"></i>
+    <span>Verileri Güncelle</span>
+  </button>
+
+  <!-- ODA / PROFİL LİNKİ BUTONU (Yalnızca kullanıcı yüklendiğinde/URL'de user parametresi olduğunda aktifleşir) -->
+  <button class="rc-modern-btn room-link-btn" 
+          ng-click="openUserRoomLink()" 
+          ng-disabled="!isLoadedUser"
+          style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
+          ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
+    <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
+    <span>Odayı Görüntüle</span>
+  </button>
+
+</div>
+
+</div>
+      </div>
+
+    </aside>
+
+
+    <!-- SAĞ PANEL -->
+    <section class="rc-content">
+
+<div ng-if="customMiners.length > 0">
+<div class="modern-gpu-wrapper" ng-if="customMiners.length > 0">
+
+  <div class="modern-general-header">
+    <h4 class="rc-title">MINER LİSTEM</h4>
+  </div>
+
+  <div class="modern-gpu-grid">
+
+    <div class="modern-gpu-card"
+         ng-repeat="miner in customMiners track by $index">
+
+      <div class="gpu-top">
+
+        <div class="gpu-image">
+          <img src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608">
+        </div>
+
+        <div class="gpu-info">
+          <div class="gpu-name">
+            {{miner.name.en}}
+          </div>
+
+          <div class="gpu-level">
+            ⭐ LVL {{miner.level + 1}}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gpu-stats">
+
+        <div class="stat-row">
+          <span>⚡ Güç</span>
+          <strong>
+            {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}}
+            {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
+          </strong>
+        </div>
+
+        <div class="stat-row">
+          <span>🎁 Bonus</span>
+          <strong class="bonus">
+            {{(miner.bonus_power / 100)}}%
+          </strong>
+        </div>
+		<div class="stat-row">
+          <span>🎁 Bonuslu Güç</span>
+            <span class="total-power-value">
+			{{
+			chooseBestHashRateUnit(
+				miner.power * (1 + (miner.bonus_power / 10000)),
+				'GH/s'
+			).value.toFixed(2)
+			}}
+			{{
+			chooseBestHashRateUnit(
+				miner.power * (1 + (miner.bonus_power / 10000)),
+				'GH/s'
+			).unit
+			}}
+			</span>
+        </div>
+
+        <div class="stat-row">
+          <span>💰 Mağaza Durumu</span>
+          <strong  class="market-status" 
+				ng-class="{
+              'sellable': miner.is_can_be_sold_on_mp,
+              'not-sellable': !miner.is_can_be_sold_on_mp
+          }">
+            {{ miner.is_can_be_sold_on_mp ? 'Satılır' : 'Satılamaz' }}
+          </strong>
+        </div>
+
+      </div>
+
+      <div class="gpu-actions">
+        <button class="btn-remove"
+                ng-click="removeMinerFromSimulation(miner)">
+          Kaldır
+        </button>
+
+        <button class="btn-shop"
+                ng-click="openBuyLink(miner)">
+          Mağazaya Git
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- MINER LİSTESİ KODLARI -->
+<div id="minerlistesi">
+ 
+<div class="modern-miner-wrapper">
+  <div class="modern-general-header">
+    <h4 class="rc-title">MINER LİSTESİ</h4>
+  </div>
+
+<div class="modern-filter-horizontal">
+
+<div class="alert alert-warning text-center my-2" 
+       ng-if="!isLoadedUser" 
+       style="background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc107; color: #ffc107; border-radius: 8px; padding: 10px; font-size: 13px;">
+    <i class="fas fa-exclamation-triangle" style="margin-right: 5px;"></i>
+    Oda durumunu görebilmek için lütfen bir kullanıcı adı aratın ve profili yükleyin.
+  </div>
+
+  <div class="filter-row">
+
+    <div class="filter-item">
+      <label>Miner Adı</label>
+      <input type="text" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)" ng-model="allMinerNameSearch" placeholder="Örn: YMCA">
+    </div>
+
+    <div class="filter-item">
+      <label>Seviye Durumu</label>
+      <select ng-model="allMinersRarity" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+<option value="all">Hepsini göster</option>
+<option value="common">Common</option>
+<option value="legacy">Legacy</option>
+<option value="uncommon">Uncommon</option>
+<option value="rare">Rare</option>
+<option value="epic">Epic</option>
+<option value="legendary">Legendary</option>
+<option value="unreal">Unreal</option>
+</select>
+    </div>
+
+    <div class="filter-item">
+      <label>Mağaza Durumu</label>
+<select ng-model="allMinerNegotiableStatus" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+<option value="all">Hepsini göster</option>
+<option value="inegotiable">Satılamaz</option>
+<option value="negotiable">Satılabilir</option>
+</select>
+    </div>
+
+    <div class="filter-item" ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}" >
+      <label>Oda Durumu</label>
+<select ng-model="allMinerPosessionStatus"ng-disabled="!isLoadedUser" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+<option value="all">Hepsini göster</option>
+<option value="mine">Var</option>
+<option value="not_mine">Yok</option>
+</select>
+    </div>
+
+    <div class="filter-item">
+      <label>Paketler</label>
+<select ng-model="allMinerCollectionId" ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+	<option value="all">Hepsini göster</option>
+	<option ng-repeat="collection in collections" value="{{collection.id}}">{{collection.name}}</option>
+	</select>
+    </div>
+
+  </div>
+
+  <div class="filter-footer">
+    Toplam: {{allMiners.length}} Miner!
+  </div>
+
+</div>
+
+
+
+  <div class="modern-miner-grid">
+    <div class="modern-miner-card" ng-repeat="miner in allMiners | orderBy:'power':true | limitTo:visibleItems">
+	<!-- Rarity -->
+	<div class="rarity-badge {{miner.rarity}}">
+		{{miner.rarity | uppercase}}
+	</div>
+	<!-- Level -->
+	<div class="level-badge level-{{miner.level}}">
+		⭐ LVL {{miner.level + 1}}
+	</div>
+	<div class="miner-image">
+		<img src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608">
+	</div>
+	<div class="miner-name">
+		{{miner.name.en}}
+	</div>
+	<!--div class="collection-badge"
+     ng-if="getMinerCollection(miner.miner_id)">
+    📦 {{getMinerCollection(miner.miner_id).name}}
+</div--!>
+
+
+<div class="miner-stats">
+  <!-- Güç -->
+  <div class="stat-row">
+    <span>⚡ Güç</span>
+    <span>
+      {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}}
+      {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
+    </span>
+  </div>
+  <!-- Bonus -->
+  <div class="stat-row">
+    <span>🎁 Bonus</span>
+    <span class="bonus-value">
+      {{(miner.bonus_power / 100)}}%
+    </span>
+  </div>
+<!-- Bonuslu Toplam Güç -->
+<div class="stat-row">
+          <span>🎁 Bonuslu Güç</span>
+            <span class="total-power-value">
+			{{
+			chooseBestHashRateUnit(
+				miner.power * (1 + (miner.bonus_power / 10000)),
+				'GH/s'
+			).value.toFixed(2)
+			}}
+			{{
+			chooseBestHashRateUnit(
+				miner.power * (1 + (miner.bonus_power / 10000)),
+				'GH/s'
+			).unit
+			}}
+			</span>
+        </div>
+
+  <!-- Oda Durumu -->
+  <div class="stat-row">
+    <span>🏠 Oda Durumu</span>
+    <span class="room-status"
+          ng-class="{
+            'room-have': miner.already_have,
+            'room-not-have': !miner.already_have
+          }">
+      {{ miner.already_have ? 'Var' : 'Yok' }}
+    </span>
+  </div>
+  <!-- Satış Durumu (Oda durumunun ALTINA eklendi) -->
+  <div class="stat-row">
+    <span>💰 Mağaza Durumu</span>
+    <span class="market-status"
+          ng-class="{
+            'sellable': miner.is_can_be_sold_on_mp,
+            'not-sellable': !miner.is_can_be_sold_on_mp
+          }">
+      {{ miner.is_can_be_sold_on_mp ? 'Satılır' : 'Satılamaz' }}
+    </span>
+  </div>
+
+</div>
+        <button class="modern-add-btn"
+                ng-click="openBuyLink(miner)">
+          Mağazaya Git
+        </button>
+    </div>
+<div class="load-more-wrapper" ng-init="visibleItems = 12">
+
+    <button class="load-more-wrapper load-more-btn"
+            ng-click="visibleItems = visibleItems + 6"
+            ng-hide="visibleItems >= allMiners.length">
+        Daha Fazla Göster
+    </button>
+
+    <div class="load-info">
+        {{ (visibleItems < allMiners.length) ? visibleItems : allMiners.length }} / {{allMiners.length}}  
+    </div>
+
+</div>
+  </div>
+
+
+</div>
+
+</div>
+
+    </section>
+
+  </main>
+
+</div>
+<footer class="rc-footer rc-footer-roller">
+
+  <div class="footer-bottom">
+    © 2026 RCHesapla • Rollercoin Hesaplama Aracı
+  </div>
+
+</footer>
+
+<script>
+async function takeScreenshot() {
+
+  const element = document.querySelector('.rc-content');
+
+  // Kullanıcı adını Angular modelden al
+  const usernameInput = document.querySelector('input[ng-model="userSearchText"]');
+  const username = usernameInput && usernameInput.value 
+      ? usernameInput.value 
+      : "Misafir";
+
+  // Tarih saat oluştur
+  const now = new Date();
+  const formattedDate = now.toLocaleString("tr-TR");
+
+  // Geçici üst bilgi alanı oluştur
+  const header = document.createElement("div");
+  header.style.padding = "15px";
+  header.style.background = "#0f172a";
+  header.style.color = "white";
+  header.style.fontSize = "14px";
+  header.style.textAlign = "center";
+  header.style.borderBottom = "1px solid #334155";
+  header.innerHTML = `
+    <strong>RCHesapla Kazanç Analizi</strong><br>
+    👤 Kullanıcı: ${username} <br>
+    📅 ${formattedDate}
+  `;
+
+  element.prepend(header);
+
+  const canvas = await html2canvas(element, {
+    backgroundColor: "#0f172a",
+    scale: 2,
+    useCORS: true
+  });
+
+  header.remove();
+
+  canvas.toBlob(async function(blob) {
+
+    // 📱 Mobil paylaşım desteği
+    if (navigator.share && navigator.canShare) {
+
+      const file = new File([blob], "rchesapla-analiz.png", {
+        type: "image/png"
+      });
+
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          title: "RCHesapla Kazanç Analizi",
+          text: "Kazım gücü analizim 👇",
+          files: [file]
+        });
+        return;
+      }
+    }
+
+    // 💻 Desktop fallback (indir)
+    const link = document.createElement('a');
+    link.download = "rchesapla-analiz.png";
+    link.href = URL.createObjectURL(blob);
+    link.click();
+
+  });
+}
+</script>
+
+
+
+<script>
+let clockMode = "TR";
+
+function setClockMode(mode) {
+  clockMode = mode;
+  updateClock();
+}
+
+function getTimeZone() {
+  if (clockMode === "TR") return "Europe/Istanbul";
+  if (clockMode === "UTC") return "UTC";
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+function updateClock() {
+  const now = new Date();
+  const timeZone = getTimeZone();
+
+  const time = new Intl.DateTimeFormat("tr-TR", {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  }).format(now);
+
+  const date = new Intl.DateTimeFormat("tr-TR", {
+    timeZone,
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  }).format(now);
+
+  document.getElementById("clockTime").textContent = time;
+  document.getElementById("clockDate").textContent = date;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

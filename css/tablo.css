@@ -1,0 +1,329 @@
+.modern-earnings-wrapper{
+  margin-top:20px;
+}
+
+.modern-earnings-header{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.modern-earnings-header h4{
+  color:#00e5ff;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.coin-rate{
+  margin-top:5px;
+  color:#8fa3ff;
+  font-size:13px;
+}
+
+.modern-earnings-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.earning-card{
+  background:linear-gradient(145deg,#0f1630,#111a3a);
+  border:1px solid rgba(0,229,255,0.3);
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.earning-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 15px rgba(0,229,255,0.4);
+  border-color:#00e5ff;
+}
+
+.earning-title{
+  font-size:14px;
+  color:#8fa3ff;
+  margin-bottom:10px;
+}
+
+.earning-main{
+  font-size:20px;
+  font-weight:700;
+  color:#00e5ff;
+  margin-bottom:6px;
+}
+
+.earning-sub{
+  font-size:13px;
+  color:#ffffff;
+}
+
+.highlight{
+  border:1px solid #00e5ff;
+  box-shadow:0 0 20px rgba(0,229,255,0.4);
+}
+
+
+
+/*MADENCİ LİSTELEME ŞABLONU*/
+
+.total-power-row {
+  background: linear-gradient(90deg, #00e5ff22, #00ffcc22);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.total-power-value {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+
+.modern-pagination {
+  display: flex;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--açıklama);
+  text-align:center;
+}
+
+.modern-pagination a {
+  text-decoration: none;
+  text-align:center;
+  min-width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover efekti */
+.modern-pagination a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: gold;
+}
+
+/* Active page */
+.modern-pagination .active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  border-radius: 14px;
+}
+
+/* Prev / Next */
+.nav-btn {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*MADENCİ GÖSTEREN ŞABLON*/
+
+.modern-miner-wrapper {
+  padding: 20px;
+}
+
+.modern-miner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.modern-miner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.modern-miner-card {
+  background: linear-gradient(145deg, #141e42, #0e1530);
+  border-radius: 16px;
+  padding: 18px;
+  position: relative;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.modern-miner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.25);
+}
+
+.miner-image img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.miner-name {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+}
+
+.fancy-name {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #00e5ff, #00ffcc, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #00ffcc;
+  }
+  to {
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #8a2be2;
+  }
+}
+
+
+.miner-stats {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #00e5ff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modern-add-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: #00e5ff;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modern-add-btn:hover {
+  background: #00bcd4;
+}
+
+.rarity-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.rarity-badge.common { background:#777; }
+.rarity-badge.uncommon { background:#3fa34d; }
+.rarity-badge.rare { background:#3b82f6; }
+.rarity-badge.epic { background:#a855f7; }
+.rarity-badge.legendary { background:#f59e0b; }
+.rarity-badge.unreal { background:#ff0055; }
+.rarity-badge.legacy { background:#999; }
+
+.level-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.level-badge-2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.eniyikazancaciklama {
+  text-align:center;
+  font-size: 11px;
+  color: #fff;
+}
+
+/* Level renkleri */
+.level-0 { background: #6b7280; }      /* Gri */
+.level-1 { background: #3b82f6; }      /* Mavi */
+.level-2 { background: #8b5cf6; }      /* Mor */
+.level-3 { background: #f59e0b; }      /* Altın */
+.level-4 { background: #ef4444; }      /* Kırmızı */
+.level-5 { background: linear-gradient(45deg,#00e5ff,#ff00cc); } /* Neon */
+
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 4px 0;
+  color: #cbd5ff;
+}
+
+.bonus-value {
+  color: #00e5ff;
+  font-weight: 600;
+}
+
+/* Oda durumu */
+.room-status {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.room-have {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.room-not-have {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+
+.market-status {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Satılabilir */
+.sellable {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+}
+
+/* Satılamaz */
+.not-sellable {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}

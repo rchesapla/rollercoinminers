@@ -1,0 +1,77 @@
+/* input, select {
+	color: rgb(255, 220, 0);
+	background: #2a2d43;
+	font-family: var(--card-header) !important;
+	padding: 5px;
+	border: 1px solid #999999;
+}*/
+
+input,
+type,
+#verigüncelle:not([disabled]) {
+background-color: gold;
+font-weight: bolder;
+}
+
+#type[disabled] {
+background-color: #498a74;
+font-weight: bolder;
+color: black;
+}
+
+inputs[disabled] {
+background-color: #d7d0a7;
+font-weight: bolder;
+}
+
+/* ANIMATION PULSE */
+@keyframes animated-border {
+ 	0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .4); }
+ 	100% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+}
+
+#box {
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 100%;
+	color: black;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+#verigüncelle {
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 100%;
+	color: black;
+	font-size: 18px;
+	line-height: 30px;
+	animation: animated-border 1.5s infinite;
+}
+
+
+/* SELECT AYARLARI */
+
+#type,
+#category_id,
+#investmentInput {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #1f2937;
+  border-radius: 0.375rem;
+  background-color: #111827;
+  padding: 10px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+#type:focus,
+#category_id:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #047857;
+}

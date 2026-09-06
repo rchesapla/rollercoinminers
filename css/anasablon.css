@@ -1,0 +1,505 @@
+::-webkit-scrollbar {
+background: #2f3045;
+width: 2px;
+}
+::-webkit-scrollbar-thumb {
+background: red;
+	animation: animated-border 1.5s infinite;
+}
+
+.rc-horizontal-form {
+  margin-top: 15px;
+}
+
+.rc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.power-row {
+  display: flex;
+  gap: 8px;
+}
+
+.power-row input {
+  flex: 2;
+}
+
+.power-row select {
+  flex: 1;
+}
+
+
+.loading-overlay {
+position: fixed;
+font: 15px var(--yukleniyor);
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+color: red;
+}
+
+body {
+	text-decoration:none;
+	background: #181928 !important; /* background: #151414; */
+font-family: var(--minerlistem);
+}
+
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --bg-soft:#111827;/* gray-900 */
+  --text:#e5e7eb;   /* gray-200 */
+  --muted:#9ca3af;  /* gray-400 */
+  --accent:#22d3ee; /* cyan-400 */
+  --accent-2:#38bdf8;   /* sky-400 */
+  --ring:rgba(56,189,248,.45);
+  --card:#111827;
+  --border:rgba(255,255,255,.08);
+}
+@media (prefers-color-scheme: light){
+  :root{
+--bg:#0b1220; /* yine koyu tut, footerde kontrast iyi olur */
+--text:#e7e7ea;
+--muted:#b5b8be;
+--card:#0f172a;
+--border:rgba(255,255,255,.12);
+  }
+}
+
+
+.footer{
+  background:linear-gradient(180deg, var(--bg) 0%, #0b1020 100%);
+  padding:56px 20px 22px;
+  border-top:1px solid var(--border);
+}
+
+.rc-wrapper {
+  background: var(--panel);
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+.rc-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background: var(--card);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.rc-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.rc-logo img {
+  width: 35px;
+}
+
+.rc-main {
+  display: flex;
+  padding: 10px;
+}
+
+.rc-sidebar {
+
+}
+
+.rc-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  font-family: var(--minerlistem);
+}
+
+.rc-input-group {
+  margin-bottom: 15px;
+}
+
+.rc-input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: var(--muted);
+}
+
+.rc-input-group input,
+.rc-input-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #1a2148;
+  color: white;
+}
+
+.rc-btn-primary {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rc-btn-primary:hover {
+  transform: scale(1.03);
+}
+
+.rc-content {
+  flex: 1;
+  font-family: var(--minerlistem) !important;
+}
+
+.rc-earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.rc-earn-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.rc-earn-card .highlight {
+  border: 2px solid red;
+  color: red;
+}
+
+.rc-earn-card h2 {
+  margin: 10px 0;
+  color: var(--accent);
+}
+
+.rc-coin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 18px;
+}
+
+.rc-coin-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+
+/* ============================= */
+/* MOBİL RESPONSIVE rc-content   */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Ana layout: sidebar + content alt alta */
+  .rc-main {
+    flex-direction: column;
+  }
+
+  .rc-sidebar {
+    width: 100%;
+    order: 1;
+  }
+
+  .rc-content {
+    width: 100%;
+    order: 2;
+    padding: 10px;
+  }
+
+  /* Kazanç kartları: tek sütun */
+  .rc-earnings-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Genel coin grid */
+  .modern-general-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Miner kart grid */
+  .modern-gpu-grid,
+  .modern-miner-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Filtreler mobilde alt alta */
+  .filter-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  /* Kart iç padding küçült */
+  .modern-coin-card,
+  .modern-gpu-card,
+  .modern-miner-card,
+  .rc-earn-card {
+    padding: 12px;
+  }
+
+  /* Büyük başlıkları küçült */
+  .rc-title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Butonlar full width */
+  .rc-btn-primary,
+  .modern-add-btn,
+  .btn-remove,
+  .btn-shop {
+    width: 100%;
+  }
+}
+
+/* Küçük telefonlar */
+@media (max-width: 480px) {
+
+  .rc-content {
+    padding: 6px;
+  }
+
+  .rc-earn-card h2 {
+    font-size: 18px;
+  }
+
+  .gpu-name,
+  .miner-name {
+    font-size: 14px;
+  }
+
+  .stat-row {
+    font-size: 12px;
+  }
+}
+
+
+.rc-roi-panel {
+  margin-top: 20px;
+  padding: 15px;
+  background: #111;
+  border-radius: 12px;
+}
+
+.rc-roi-card {
+  margin-top: 10px;
+  padding: 12px;
+  background: #1b1b1b;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.site-intro {
+    margin-bottom: 20px;
+}
+
+.intro-content {
+	text-align:center;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.intro-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.intro-item {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.intro-item:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+.ad-banner{
+  background:#0f172a;
+  border:1px dashed #334155;
+  color:#94a3b8;
+  text-align:center;
+  padding:18px;
+  margin:15px 0;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.ad-box{
+  background:#020617;
+  border:1px dashed #334155;
+  color:#94a3b8;
+  padding:25px 10px;
+  text-align:center;
+  margin:20px 0;
+  border-radius:12px;
+}
+
+.ad-top{
+  margin:15px auto;
+  max-width:900px;
+}
+
+.ad-sticky{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#020617;
+  border-top:1px solid #334155;
+  text-align:center;
+  padding:10px;
+  z-index:9999;
+}
+
+
+
+
+
+
+
+.table-container{
+  padding:18px;
+  border-radius:18px;
+  background:#020617;
+  border:1px solid #1e293b;
+}
+
+.table-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.table-refresh-btn{
+  background:#0ea5e9;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
+  color:white;
+  font-size:13px;
+  transition:.2s;
+}
+
+.table-refresh-btn:hover{
+  background:#0284c7;
+  transform:translateY(-1px);
+}
+
+.table-scroll{
+  overflow:auto;
+  max-height:420px;
+}
+
+/* scroll bar */
+.table-scroll::-webkit-scrollbar{
+  width:8px;
+  height:8px;
+}
+.table-scroll::-webkit-scrollbar-thumb{
+  background:#1e293b;
+  border-radius:10px;
+}
+
+/* table */
+.rc-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.rc-table thead{
+  position:sticky;
+  top:0;
+  background:#020617;
+  z-index:2;
+}
+
+.rc-table th{
+  padding:12px;
+  text-align:left;
+  border-bottom:1px solid #1e293b;
+  color:#94a3b8;
+}
+
+.rc-table td{
+  padding:12px;
+  border-bottom:1px solid #0f172a;
+}
+
+.rc-table tbody tr{
+  transition:.15s;
+}
+
+.rc-table tbody tr:hover{
+  background:#020617;
+  transform:scale(1.01);
+}
+
+/* best coin highlight */
+.best-row{
+  background:linear-gradient(90deg,#064e3b,#022c22);
+  border-left:4px solid #22c55e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

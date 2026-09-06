@@ -1,0 +1,79 @@
+.rc-clock-advanced {
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  font-family: var(--minerlistem);
+}
+
+.clock-main {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00eaff;
+  letter-spacing: 1px;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+.clock-date {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.clock-controls {
+  margin-top: 4px;
+}
+
+.clock-controls button {
+  background: #111;
+  border: 1px solid #00eaff;
+  color: #00eaff;
+  font-size: 10px;
+  padding: 2px 6px;
+  margin: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.clock-controls button:hover {
+  background: #00eaff;
+  color: #000;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #00eaff;
+  }
+  to {
+    text-shadow: 0 0 15px #00eaff;
+  }
+}
+
+
+
+.rc-topbar-roller {
+  background: linear-gradient(180deg,#0b0f1a,#05070d);
+  border-bottom: 2px solid #00e5ff;
+  padding: 12px 20px;
+  font-family: var(--minerlistem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,255,255,0.15);
+}
+
+/* SOL TARAF */
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 18px;
+}

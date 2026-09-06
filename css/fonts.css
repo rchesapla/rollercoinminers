@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/*
+Quantico
+*/
+
+:root {
+  --genelfont: Braah One, sans-serif;
+  --minerlistem: Quantico, sans-serif;
+}
+.açıklama {
+	font: 15px var(--açıklama);
+	}
+.loader-box {
+	font-family: var(--genelfont);
+	font-size: 18px !important;
+	}
+.card-header {
+	font-family: var(--genelfont);
+	font-size: 18px !important;
+	}
+.card-body {
+	font-family: var(--genelfont);
+	font-size: 15px !important;
+	}
+.labelbaşlık {
+	font-family: var(--labelbaşlık);
+	font-size: 20px !important;
+	font-weight: 700;
+	font-style: normal;
+	text-shadow: 1px 1px 1px 1px rgba(255,0,0,0.6);
+	}
+.form-select,
+.form-control {
+	font-family: var(--tablo);
+	font-size: 13px !important;
+	}
