@@ -498,68 +498,9 @@
   <main class="rc-main">
 
     <!-- SOL PANEL -->
-    <aside class="rc-sidebar">
+    <aside class="rc-sidebar ">
 
-      <div class="rc-card">
-        <div class="rc-clock-advanced">
-          <div class="clock-main">
-            <i class="fas fa-clock"></i>
-            <span id="clockTime">--:--:--</span>
-          </div>
-          <div class="clock-date" id="clockDate">
-            -- -- ----
-          </div>
-        </div>
 
-        <div class="rc-horizontal-form">
-          <div class="rc-form-grid">
-            <div class="rc-input-group" style="position: relative;">
-              <label>RC Kul. Adı</label>
-              
-              <div class="input-with-history" style="position: relative;">
-                <input type="text"
-                       ng-model="userSearchText" 
-                       placeholder="Örn: FthCLK" 
-                       typeahead-wait-ms="200"
-                       uib-typeahead="player as player.code for player in getPlayerByName($viewValue)"
-                       typeahead-no-results="playerSearchNoResults"
-                       typeahead-on-select="onSelectPlayer($item, $model, $label, $event)"
-                       typeahead-loading="loading"
-                       ng-focus="onInputFocus()"
-                       ng-blur="onInputBlur()"
-                       autocomplete="off"/>
-              </div>
-
-              <div class="player-no-results" ng-if="playerSearchNoResults">
-                <div class="no-results-icon">🔍</div>
-                <h4 class="no-results-title">Oyuncu bulunamadı</h4>
-                <p class="no-results-text">
-                  Aradığınız kullanıcı mevcut değil.
-                  Lütfen farklı bir isim deneyin.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="checkbox-group modern-btn-group" style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="rc-modern-btn room-link-btn" 
-                    ng-click="resetValues()"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
-              <i class="fas fa-sync-alt"></i>
-              <span>Verileri Güncelle</span>
-            </button>
-
-            <button class="rc-modern-btn room-link-btn" 
-                    ng-click="openUserRoomLink()" 
-                    ng-disabled="!isLoadedUser"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
-                    ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
-              <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
-              <span>Odayı Görüntüle</span>
-            </button>
-          </div>
-        </div>
-      </div>
     </aside>
 
     <!-- SAĞ PANEL -->
@@ -643,6 +584,68 @@
 
           <!-- Horizontal Filtering Controls -->
           <div class="modern-filter-horizontal">
+
+      <div class="rc-card">
+        <div class="rc-clock-advanced">
+          <div class="clock-main">
+            <i class="fas fa-clock"></i>
+            <span id="clockTime">--:--:--</span>
+          </div>
+          <div class="clock-date" id="clockDate">
+            -- -- ----
+          </div>
+        </div>
+
+        <div class="rc-horizontal-form">
+          <div class="rc-form-grid">
+            <div class="rc-input-group" style="position: relative;">
+              <label>RC Kul. Adı</label>
+              
+              <div class="input-with-history" style="position: relative;">
+                <input type="text"
+                       ng-model="userSearchText" 
+                       placeholder="Örn: FthCLK" 
+                       typeahead-wait-ms="200"
+                       uib-typeahead="player as player.code for player in getPlayerByName($viewValue)"
+                       typeahead-no-results="playerSearchNoResults"
+                       typeahead-on-select="onSelectPlayer($item, $model, $label, $event)"
+                       typeahead-loading="loading"
+                       ng-focus="onInputFocus()"
+                       ng-blur="onInputBlur()"
+                       autocomplete="off"/>
+              </div>
+
+              <div class="player-no-results" ng-if="playerSearchNoResults">
+                <div class="no-results-icon">🔍</div>
+                <h4 class="no-results-title">Oyuncu bulunamadı</h4>
+                <p class="no-results-text">
+                  Aradığınız kullanıcı mevcut değil.
+                  Lütfen farklı bir isim deneyin.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox-group modern-btn-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="rc-modern-btn room-link-btn" 
+                    ng-click="resetValues()"
+                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
+              <i class="fas fa-sync-alt"></i>
+              <span>Verileri Güncelle</span>
+            </button>
+
+            <button class="rc-modern-btn room-link-btn" 
+                    ng-click="openUserRoomLink()" 
+                    ng-disabled="!isLoadedUser"
+                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
+                    ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
+              <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
+              <span>Odayı Görüntüle</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
             <div class="alert alert-warning text-center my-2" 
                  ng-if="!isLoadedUser" 
                  style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde047; border-radius: 12px; padding: 12px; font-size: 13px;">
