@@ -674,18 +674,8 @@
                 </select>
               </div>
             </div>
-
-            <div class="filter-footer">
-              <span class="total-badge-chip">
-                <i class="fas fa-microchip"></i> Toplam: {{allMiners.length}} Miner
-              </span>
-			  
-			  
-
-			  
-			  
-            </div>
-<div class="checkbox-group modern-btn-group" style=" flex-direction: column; gap: 8px;">
+<div class=" modern-btn-group" style=" flex-direction: column; gap: 8px;">
+			
             <button class="rc-modern-btn room-link-btn" 
                     ng-click="resetValues()"
                     style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
@@ -702,6 +692,12 @@
               <span>Odayı Görüntüle</span>
             </button>
           </div>
+            <div class="filter-footer">
+              <span class="total-badge-chip">
+                <i class="fas fa-microchip"></i> Toplam: {{allMiners.length}} Miner
+              </span>
+            </div>
+			
           </div>
 
           <!-- Miner Grid Container -->
