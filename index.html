@@ -585,21 +585,17 @@
           <!-- Horizontal Filtering Controls -->
           <div class="modern-filter-horizontal">
 
-      <div class="rc-card">
-        <div class="rc-clock-advanced">
-          <div class="clock-main">
-            <i class="fas fa-clock"></i>
-            <span id="clockTime">--:--:--</span>
-          </div>
-          <div class="clock-date" id="clockDate">
-            -- -- ----
-          </div>
-        </div>
+            <div class="alert alert-warning text-center my-2" 
+                 ng-if="!isLoadedUser" 
+                 style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde047; border-radius: 12px; padding: 12px; font-size: 13px;">
+              <i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>
+              Oda durumunu görebilmek için lütfen bir kullanıcı adı aratın ve profili yükleyin.
+            </div>
 
-        <div class="rc-horizontal-form">
-          <div class="rc-form-grid">
+            <div class="filter-row">
+              <div class="filter-item">
+                <label><i class="fa-solid fa-circle-user"></i>RC Kul. Adı</label>
             <div class="rc-input-group" style="position: relative;">
-              <label>RC Kul. Adı</label>
               
               <div class="input-with-history" style="position: relative;">
                 <input type="text"
@@ -624,36 +620,7 @@
                 </p>
               </div>
             </div>
-          </div>
-
-          <div class="checkbox-group modern-btn-group" style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="rc-modern-btn room-link-btn" 
-                    ng-click="resetValues()"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
-              <i class="fas fa-sync-alt"></i>
-              <span>Verileri Güncelle</span>
-            </button>
-
-            <button class="rc-modern-btn room-link-btn" 
-                    ng-click="openUserRoomLink()" 
-                    ng-disabled="!isLoadedUser"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
-                    ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
-              <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
-              <span>Odayı Görüntüle</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-            <div class="alert alert-warning text-center my-2" 
-                 ng-if="!isLoadedUser" 
-                 style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde047; border-radius: 12px; padding: 12px; font-size: 13px;">
-              <i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>
-              Oda durumunu görebilmek için lütfen bir kullanıcı adı aratın ve profili yükleyin.
-            </div>
-
-            <div class="filter-row">
+              </div>
               <div class="filter-item">
                 <label><i class="fas fa-search"></i> Miner Adı</label>
                 <input type="text" 
@@ -712,7 +679,29 @@
               <span class="total-badge-chip">
                 <i class="fas fa-microchip"></i> Toplam: {{allMiners.length}} Miner
               </span>
+			  
+			  
+
+			  
+			  
             </div>
+<div class="checkbox-group modern-btn-group" style=" flex-direction: column; gap: 8px;">
+            <button class="rc-modern-btn room-link-btn" 
+                    ng-click="resetValues()"
+                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
+              <i class="fas fa-sync-alt"></i>
+              <span>Verileri Güncelle</span>
+            </button>
+
+            <button class="rc-modern-btn room-link-btn" 
+                    ng-click="openUserRoomLink()" 
+                    ng-disabled="!isLoadedUser"
+                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
+                    ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
+              <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
+              <span>Odayı Görüntüle</span>
+            </button>
+          </div>
           </div>
 
           <!-- Miner Grid Container -->
