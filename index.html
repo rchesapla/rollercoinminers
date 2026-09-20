@@ -97,7 +97,7 @@ body {
   margin-top: 15px;
 }
 
-/* TERMINAL CONTROL DOCK */
+/* TERMINAL DOCK */
 .matrix-dock {
   background: var(--matrix-surface);
   border: 1px solid var(--matrix-border);
@@ -138,58 +138,6 @@ body {
   border-radius: 6px;
 }
 
-/* YOUTUBE MATRIX HUB */
-.yt-hub-dock {
-  background: linear-gradient(135deg, rgba(255, 0, 51, 0.04) 0%, #121824 100%);
-  border: 1px solid rgba(255, 0, 51, 0.2);
-  border-radius: 12px;
-  padding: 18px 22px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-}
-
-.yt-hub-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--matrix-border);
-  padding-bottom: 12px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.yt-channel-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.yt-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--matrix-yt);
-  object-fit: cover;
-}
-
-.yt-title-group h4 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.yt-title-group p {
-  margin: 0;
-  font-size: 12px;
-  color: #94a3b8;
-}
-
 .yt-sub-btn {
   background: var(--matrix-yt);
   color: #fff !important;
@@ -209,148 +157,6 @@ body {
 .yt-sub-btn:hover {
   background: #e6002c;
   transform: scale(1.03);
-}
-
-.yt-video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-
-.yt-video-item {
-  background: #080a0f;
-  border: 1px solid var(--matrix-border);
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.2s transform, 0.2s border-color;
-  text-decoration: none !important;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-}
-
-.yt-video-item:hover {
-  border-color: var(--matrix-yt);
-  transform: translateY(-2px);
-}
-
-.yt-thumb-box {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  background: #000;
-}
-
-.yt-thumb-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.yt-play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 32px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  transition: 0.2s transform, 0.2s color;
-}
-
-.yt-video-item:hover .yt-play-icon {
-  transform: translate(-50%, -50%) scale(1.15);
-  color: var(--matrix-yt);
-}
-
-.yt-video-info {
-  padding: 10px;
-}
-
-.yt-video-title {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #f1f5f9;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 4px;
-}
-
-.yt-video-desc {
-  font-size: 11px;
-  color: #64748b;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* MODAL VIDEO PLAYER */
-.yt-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  backdrop-filter: blur(4px);
-}
-
-.yt-modal-content {
-  width: 90%;
-  max-width: 800px;
-  background: #121824;
-  border: 1px solid rgba(255, 0, 51, 0.3);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-}
-
-.yt-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--matrix-border);
-}
-
-.yt-modal-header span {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
-}
-
-.yt-modal-close {
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.yt-modal-close:hover {
-  color: #fff;
-}
-
-.yt-modal-body {
-  position: relative;
-  padding-top: 56.25%;
-}
-
-.yt-modal-body iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 /* INPUT DOKUSU */
@@ -427,76 +233,92 @@ body {
   color: #fff;
 }
 
-/* YATAY VERİ ŞERİDİ (SPLIT-CARDS) */
-.matrix-grid {
+/* SADELEŞTİRİLMİŞ MINER KARTLARI IZGARASI */
+.matrix-grid-compact {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 16px;
 }
 
-.matrix-card {
+.compact-card {
   background: var(--matrix-surface);
   border: 1px solid var(--matrix-border);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-  transition: border-color 0.2s, transform 0.2s;
-}
-
-.matrix-card:hover {
-  border-color: rgba(34, 211, 238, 0.4);
-  transform: translateY(-3px);
-}
-
-.m-card-body {
-  display: flex;
-  padding: 14px;
-  gap: 14px;
-}
-
-/* Sol Blok (Resim & Rozet) */
-.m-card-media {
-  width: 110px;
-  min-width: 110px;
+  border-radius: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.compact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(34, 211, 238, 0.1);
+}
+
+.compact-card-media {
+  width: 100%;
+  height: 90px;
   background: #080a0f;
   border: 1px solid var(--matrix-border);
   border-radius: 8px;
-  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
   position: relative;
 }
 
-.m-card-media img {
-  max-width: 85px;
-  max-height: 65px;
+.compact-card-media img {
+  max-width: 90%;
+  max-height: 75px;
   object-fit: contain;
-  margin: 6px 0;
+}
+
+.compact-card-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.compact-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
 }
 
 .m-tag-lvl {
   font-family: 'Chakra Petch', monospace;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   color: #38bdf8;
-  background: rgba(56, 189, 248, 0.1);
-  padding: 2px 6px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 7px;
   border-radius: 4px;
 }
 
 .m-tag-rarity {
   font-family: 'Chakra Petch', sans-serif;
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 4px;
-  margin-top: 4px;
 }
 
 .m-tag-rarity.common { color: #94a3b8; background: rgba(148, 163, 184, 0.1); border: 1px solid #475569; }
@@ -506,47 +328,146 @@ body {
 .m-tag-rarity.legendary { color: var(--matrix-gold); background: rgba(245, 158, 11, 0.1); border: 1px solid #f59e0b; }
 .m-tag-rarity.unreal { color: var(--matrix-red); background: rgba(244, 63, 94, 0.1); border: 1px solid #f43f5e; }
 
-/* Sağ Blok (Veri Tablosu) */
-.m-card-data {
-  flex: 1;
+.compact-hint {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.m-card-name {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 8px;
-}
-
-.m-specs-list {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 4px;
-  font-size: 11.5px;
 }
 
-.m-spec-row {
+/* Sayfalama */
+.matrix-pagination {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* =============================================================
+   MINER DETAY MODALI
+   ============================================================= */
+.miner-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 7, 13, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 16px;
+}
+
+.miner-modal-card {
+  background: var(--matrix-surface);
+  border: 1px solid var(--matrix-border);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(34, 211, 238, 0.15);
+  overflow: hidden;
+  animation: modalScaleIn 0.2s ease-out;
+}
+
+@keyframes modalScaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.miner-modal-header {
+  padding: 14px 18px;
+  background: #080a0f;
+  border-bottom: 1px solid var(--matrix-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.m-spec-row span:first-child {
-  color: #64748b;
-  font-weight: 500;
+.miner-modal-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.m-spec-row span:last-child {
-  font-family: 'Chakra Petch', monospace;
+.miner-modal-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.miner-modal-close:hover {
+  color: #fff;
+}
+
+.miner-modal-body {
+  padding: 18px 20px;
+}
+
+.miner-modal-visual {
+  background: #080a0f;
+  border: 1px solid var(--matrix-border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.miner-modal-visual img {
+  max-width: 140px;
+  max-height: 90px;
+  object-fit: contain;
+  margin: 8px 0;
+}
+
+.miner-modal-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.miner-modal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 12px;
+  background: #080a0f;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  font-size: 12.5px;
+}
+
+.miner-modal-row span:first-child {
+  color: #64748b;
   font-weight: 600;
+}
+
+.miner-modal-row span:last-child {
+  font-family: 'Chakra Petch', monospace;
+  font-weight: 700;
   color: #f1f5f9;
 }
 
@@ -554,8 +475,8 @@ body {
 .status-indicator {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 11.5px;
 }
 
 .dot {
@@ -566,37 +487,13 @@ body {
 .dot-green { background: var(--matrix-green); box-shadow: 0 0 6px var(--matrix-green); }
 .dot-red { background: var(--matrix-red); box-shadow: 0 0 6px var(--matrix-red); }
 
-/* Kart Taban Butonu */
-.m-card-btn {
-  background: #0f172a;
-  color: #38bdf8;
-  border: none;
+.miner-modal-footer {
+  padding: 12px 18px;
+  background: #080a0f;
   border-top: 1px solid var(--matrix-border);
-  padding: 8px;
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s;
-}
-
-.m-card-btn:hover {
-  background: #38bdf8;
-  color: #080a0f;
-}
-
-/* Sayfalama */
-.matrix-pagination {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 24px 0;
+  justify-content: flex-end;
+  gap: 10px;
 }
 </style>
 </head>
@@ -613,7 +510,6 @@ body {
         <span class="logo-text">RCMiner</span>
       </div>
     </div>
-    <!-- Üst Bar YouTube Hızlı Bağlantı -->
     <div class="topbar-right">
       <a href="https://www.youtube.com/@FatihCELIK" target="_blank" class="yt-sub-btn">
         <i class="fab fa-youtube"></i> Fatih ÇELİK
@@ -657,7 +553,7 @@ body {
             <div class="m-field">
               <label>Kullanıcı Adı</label>
               <div class="position-relative">
-                <input type="text"
+                <input type="text" 
                        class="w-100"
                        ng-model="userSearchText" 
                        placeholder="Örn: FthCLK" 
@@ -756,75 +652,40 @@ body {
 
         </div>
 
-        <!-- MADENCİ SPLIT-CARD IZGARASI -->
-        <div class="matrix-grid">
-          <div class="matrix-card" ng-repeat="miner in allMiners | orderBy:'power':true | limitTo:visibleItems">
+        <!-- SADELEŞTİRİLMİŞ MADENCİ LİSTESİ (Sadece Ad & Seviye) -->
+        <div class="matrix-grid-compact">
+          <div class="compact-card" 
+               ng-repeat="miner in allMiners | orderBy:'power':true | limitTo:visibleItems"
+               ng-click="openMinerDetail(miner)" 
+               title="Detayları görmek için tıklayın">
             
-            <div class="m-card-body">
-              <!-- Sol Medya Bölümü -->
-              <div class="m-card-media">
-                <span class="m-tag-lvl">LVL {{miner.level + 1}}</span>
-                <img ng-src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608" 
-                     alt="{{miner.name.en}}" 
-                     loading="lazy">
-                <span class="m-tag-rarity {{miner.rarity}}">{{miner.rarity}}</span>
-              </div>
-
-              <!-- Sağ Veri Bölümü -->
-              <div class="m-card-data">
-                <div class="m-card-name" title="{{miner.name.en}}">
-                  {{miner.name.en}}
-                </div>
-
-                <div class="m-specs-list">
-                  <div class="m-spec-row">
-                    <span>Güç</span>
-                    <span>
-                      {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}} {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
-                    </span>
-                  </div>
-
-                  <div class="m-spec-row">
-                    <span>Bonus</span>
-                    <span style="color: #f43f5e;">+{{(miner.bonus_power / 100)}}%</span>
-                  </div>
-
-                  <div class="m-spec-row">
-                    <span>Net Güç</span>
-                    <span style="color: #38bdf8;">
-                      {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').value.toFixed(2)}} {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').unit}}
-                    </span>
-                  </div>
-
-                  <div class="m-spec-row">
-                    <span>Oda</span>
-                    <span class="status-indicator">
-                      <span class="dot" ng-class="miner.already_have ? 'dot-green' : 'dot-red'"></span>
-                      {{ miner.already_have ? 'Mevcut' : 'Yok' }}
-                    </span>
-                  </div>
-
-                  <div class="m-spec-row">
-                    <span>Pazar</span>
-                    <span class="status-indicator">
-                      <span class="dot" ng-class="miner.is_can_be_sold_on_mp ? 'dot-green' : 'dot-red'"></span>
-                      {{ miner.is_can_be_sold_on_mp ? 'Satılır' : 'Satılamaz' }}
-                    </span>
-                  </div>
-                </div>
-              </div>
+            <div class="compact-card-media">
+              <img ng-src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608" 
+                   alt="{{miner.name.en}}" 
+                   loading="lazy">
             </div>
 
-            <!-- Alt Satın Al Butonu -->
-            <button class="m-card-btn" ng-click="openBuyLink(miner)">
-              <i class="fas fa-shopping-cart"></i> Mağazada İncele
-            </button>
+            <!-- Miner Adı -->
+            <div class="compact-card-name" title="{{miner.name.en}}">
+              {{miner.name.en}}
+            </div>
+
+            <!-- Miner Seviye ve Nadirlik -->
+            <div class="compact-badges">
+              <span class="m-tag-lvl">LVL {{miner.level + 1}}</span>
+              <span class="m-tag-rarity {{miner.rarity}}">{{miner.rarity}}</span>
+            </div>
+
+            <div class="compact-hint">
+              <i class="fas fa-info-circle text-info"></i> Detaylar için tıklayın
+            </div>
+
           </div>
 
           <!-- Sayfalama -->
-          <div class="matrix-pagination" ng-init="visibleItems = 12">
-            <button class="m-btn px-4 py-2"
-                    ng-click="visibleItems = visibleItems + 12"
+          <div class="matrix-pagination" ng-init="visibleItems = 24">
+            <button class="m-btn px-4 py-2" 
+                    ng-click="visibleItems = visibleItems + 24"
                     ng-hide="visibleItems >= allMiners.length">
               <i class="fas fa-plus me-1"></i> Daha Fazla Göster ({{allMiners.length - visibleItems}} Kaldı)
             </button>
@@ -838,16 +699,85 @@ body {
   </main>
 </div>
 
-<!-- YOUTUBE VIDEO OYNATICI MODAL -->
-<div id="ytModal" class="yt-modal" style="display: none;">
-  <div class="yt-modal-content">
-    <div class="yt-modal-header">
-      <span id="ytModalTitle">Video Başlığı</span>
-      <button class="yt-modal-close" onclick="closeVideoModal()">&times;</button>
+<!-- =============================================================
+     MINER DETAY MODALI (Tıklayınca Açılan Menü)
+     ============================================================= -->
+<div class="miner-modal-overlay" ng-if="selectedMiner" ng-click="closeMinerDetail()">
+  <div class="miner-modal-card" ng-click="$event.stopPropagation()">
+    
+    <div class="miner-modal-header">
+      <div class="miner-modal-title">
+        <i class="fas fa-microchip text-info"></i> {{selectedMiner.name.en}}
+      </div>
+      <button class="miner-modal-close" ng-click="closeMinerDetail()">&times;</button>
     </div>
-    <div class="yt-modal-body">
-      <iframe id="ytIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="miner-modal-body">
+      <!-- Madenci Görseli & Rozetler -->
+      <div class="miner-modal-visual">
+        <img ng-src="https://static.rollercoin.com/static/img/market/miners/{{selectedMiner.filename}}.gif?v=1707996476608" 
+             alt="{{selectedMiner.name.en}}">
+        <div class="d-flex gap-2 mt-2">
+          <span class="m-tag-lvl">LVL {{selectedMiner.level + 1}}</span>
+          <span class="m-tag-rarity {{selectedMiner.rarity}}">{{selectedMiner.rarity}}</span>
+        </div>
+      </div>
+
+      <!-- Detaylı Özellik Tablosu -->
+      <div class="miner-modal-table">
+        <div class="miner-modal-row">
+          <span>Madenci Adı</span>
+          <span style="color: #38bdf8;">{{selectedMiner.name.en}}</span>
+        </div>
+
+        <div class="miner-modal-row">
+          <span>Temel Kazım Gücü</span>
+          <span>{{chooseBestHashRateUnit(selectedMiner.power, 'GH/s').value.toFixed(2)}} {{chooseBestHashRateUnit(selectedMiner.power, 'GH/s').unit}}</span>
+        </div>
+
+        <div class="miner-modal-row">
+          <span>Bonus Güç Oranı</span>
+          <span style="color: #f43f5e;">+{{(selectedMiner.bonus_power / 100)}}%</span>
+        </div>
+
+        <div class="miner-modal-row">
+          <span>Net Toplam Güç</span>
+          <span style="color: #22d3ee;">
+            {{chooseBestHashRateUnit(selectedMiner.power * (1 + (selectedMiner.bonus_power / 10000)), 'GH/s').value.toFixed(2)}} {{chooseBestHashRateUnit(selectedMiner.power * (1 + (selectedMiner.bonus_power / 10000)), 'GH/s').unit}}
+          </span>
+        </div>
+
+        <div class="miner-modal-row">
+          <span>Odadaki Durumu</span>
+          <span class="status-indicator">
+            <span class="dot" ng-class="selectedMiner.already_have ? 'dot-green' : 'dot-red'"></span>
+            {{ selectedMiner.already_have ? 'Odanızda Mevcut' : 'Odanızda Yok' }}
+          </span>
+        </div>
+
+        <div class="miner-modal-row">
+          <span>Pazar Yeri Durumu</span>
+          <span class="status-indicator">
+            <span class="dot" ng-class="selectedMiner.is_can_be_sold_on_mp ? 'dot-green' : 'dot-red'"></span>
+            {{ selectedMiner.is_can_be_sold_on_mp ? 'Pazarda Satılabilir' : 'Satılamaz' }}
+          </span>
+        </div>
+
+        <div class="miner-modal-row" ng-if="selectedMiner.cells">
+          <span>Raf Alanı (Hücre)</span>
+          <span>{{selectedMiner.cells}} Hücre</span>
+        </div>
+      </div>
     </div>
+
+    <!-- Alt Butonlar -->
+    <div class="miner-modal-footer">
+      <button class="m-btn" ng-click="closeMinerDetail()">Kapat</button>
+      <button class="m-btn text-info" ng-click="openBuyLink(selectedMiner)">
+        <i class="fas fa-shopping-cart"></i> Mağazada İncele
+      </button>
+    </div>
+
   </div>
 </div>
 
@@ -859,34 +789,18 @@ body {
 </footer>
 
 <script>
-// Video Oynatıcı Modal Fonksiyonları
-function openVideoModal(videoId, videoTitle) {
-  const modal = document.getElementById('ytModal');
-  const iframe = document.getElementById('ytIframe');
-  const title = document.getElementById('ytModalTitle');
-
-  if (modal && iframe && title) {
-    title.innerText = videoTitle || 'Video Rehber';
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-    modal.style.display = 'flex';
-  }
-}
-
-function closeVideoModal() {
-  const modal = document.getElementById('ytModal');
-  const iframe = document.getElementById('ytIframe');
-
-  if (modal && iframe) {
-    iframe.src = '';
-    modal.style.display = 'none';
-  }
-}
-
-// Modal dışına tıklayınca kapatma
-window.addEventListener('click', function(e) {
-  const modal = document.getElementById('ytModal');
-  if (e.target === modal) {
-    closeVideoModal();
+// Angular Controller Entegrasyonu: Detay Menüsü Aç/Kapat
+angular.element(document).ready(function() {
+  const scope = angular.element(document.querySelector('[ng-controller="MiningController"]')).scope();
+  if (scope) {
+    scope.selectedMiner = null;
+    scope.openMinerDetail = function(miner) {
+      scope.selectedMiner = miner;
+    };
+    scope.closeMinerDetail = function() {
+      scope.selectedMiner = null;
+    };
+    scope.$applyAsync();
   }
 });
 
