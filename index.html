@@ -498,83 +498,6 @@
 
     <!-- SAĞ PANEL -->
     <section class="rc-content">
-
-      <!-- MINER LİSTEM SECTION -->
-      <div ng-if="customMiners.length > 0">
-        <div class="modern-gpu-wrapper" ng-if="customMiners.length > 0">
-          <div class="modern-general-header">
-            <h4 class="rc-title">MINER LİSTEM</h4>
-          </div>
-
-          <div class="modern-gpu-grid">
-            <div class="modern-gpu-card" ng-repeat="miner in customMiners track by $index">
-              <div class="gpu-top">
-                <div class="gpu-image">
-                  <img src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608">
-                </div>
-                <div class="gpu-info">
-                  <div class="gpu-name">
-                    {{miner.name.en}}
-                  </div>
-                  <div class="gpu-level">
-                    ⭐ LVL {{miner.level + 1}}
-                  </div>
-                </div>
-              </div>
-
-              <div class="gpu-stats">
-                <div class="stat-row">
-                  <span>⚡ Güç</span>
-                  <strong>
-                    {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}}
-                    {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
-                  </strong>
-                </div>
-
-                <div class="stat-row">
-                  <span>🎁 Bonus</span>
-                  <strong class="bonus">
-                    {{(miner.bonus_power / 100)}}%
-                  </strong>
-                </div>
-                
-                <div class="stat-row">
-                  <span>🎁 Bonuslu Güç</span>
-                  <span class="total-power-value">
-                    {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').value.toFixed(2)}}
-                    {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').unit}}
-                  </span>
-                </div>
-
-                <div class="stat-row">
-                  <span>💰 Mağaza Durumu</span>
-                  <strong class="market-status" 
-                          ng-class="{
-                            'sellable': miner.is_can_be_sold_on_mp,
-                            'not-sellable': !miner.is_can_be_sold_on_mp
-                          }">
-                    {{ miner.is_can_be_sold_on_mp ? 'Satılır' : 'Satılamaz' }}
-                  </strong>
-                </div>
-              </div>
-
-              <div class="gpu-actions">
-                <button class="btn-remove" ng-click="removeMinerFromSimulation(miner)">
-                  Kaldır
-                </button>
-                <button class="btn-shop" ng-click="openBuyLink(miner)">
-                  Mağazaya Git
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MINER LİSTESİ REDESIGNED SECTION -->
-      <div id="minerlistesi">
-        <div class="modern-miner-wrapper">
-
           <!-- Horizontal Filtering Controls -->
           <div class="modern-filter-horizontal">
 
@@ -667,11 +590,11 @@
                 </select>
               </div>
             </div>
-<div class=" modern-btn-group" style=" flex-direction: column; gap: 8px;">
+<div class=" modern-btn-group" style="  gap: 8px;">
 			
             <button class="rc-modern-btn room-link-btn" 
                     ng-click="resetValues()"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
+                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer;  align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
               <i class="fas fa-sync-alt"></i>
               <span>Verileri Güncelle</span>
             </button>
@@ -692,6 +615,11 @@
             </div>
 			
           </div>
+      <!-- MINER LİSTESİ REDESIGNED SECTION -->
+      <div id="minerlistesi">
+        <div class="modern-miner-wrapper">
+
+
 
           <!-- Miner Grid Container -->
           <div class="modern-miner-grid">
