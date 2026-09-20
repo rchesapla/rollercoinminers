@@ -1,485 +1,390 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="miningApp">
+<html lang="tr" ng-app="miningApp">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!--===============================================================================================-->
-<title>RCMiner - Rollercoin Mağaza Listesi!</title>
-<meta name="description" content="Rollercoin kazım gücü hesaplama aracı. Günlük, haftalık, aylık ve yıllık kazanç hesapla. Çekim süresi, miner bonusu ve gerçek zamanlı ağ gücü analizi ile en doğru Rollercoin hesaplayıcı.">
-<meta name="author" content="Fatih ÇELİK">
-<meta name="keywords" content="rollercoin hesaplama, rollercoin kazım gücü hesaplama, rollercoin calculator, rollercoin mining calculator, rollercoin günlük kazanç, rollercoin çekim süresi hesaplama, rollercoin miner bonus hesaplama, rollercoin power calculator, rollercoin türk hesaplama aracı, rollercoin kazanç analizi">
-<link rel="shortcut icon" href="img/rcminers.png" type="image/x-icon">
-<meta property="og:title" content="Rollercoin Hesaplama Aracı – Kazım Gücü & Kazanç Analizi">
-<meta property="og:description" content="Rollercoin kazım gücünü hesapla, günlük kazancını öğren, çekim süresini analiz et. Türkiye'nin en gelişmiş Rollercoin hesaplayıcısı.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rchesapla.github.io/">
-<meta property="og:image" content="https://rchesapla.github.io/img/logo.png">
-<!--===============================================================================================-->
-<link rel="stylesheet" href="./css/anasablon.css">
-<link rel="stylesheet" href="./css/genelkazanc.css">
-<link rel="stylesheet" href="./css/profil.css">
-<link rel="stylesheet" href="./css/tablo.css">
-<link rel="stylesheet" href="./css/fonts.css">
-<link rel="stylesheet" href="./css/minerlistesi.css">
-<link rel="stylesheet" href="./css/ustbar.css">
-<link rel="stylesheet" href="./css/altbar.css">
-<link rel="stylesheet" href="./css/paracekmelistesi.css">
-<link rel="stylesheet" href="./css/yukleniyor.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" href="./css/input.css">
-<link rel="stylesheet" href="./css/button.css">
-<link rel="stylesheet" href="./css/checkbox.css">
-<!--===============================================================================================-->
-<meta name="google-adsense-account" content="ca-pub-6469916074236350">
-<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-<!--===============================================================================================-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!--===============================================================================================-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!--===============================================================================================-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/spark-md5/3.0.0/spark-md5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-<!--===============================================================================================-->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<!--===============================================================================================-->
-<script src="https://wminerrc.github.io/calculator/data/basic_miners.js"></script>
-<script src="https://wminerrc.github.io/calculator/data/merge_miners.js"></script>
-<script src="https://wminerrc.github.io/calculator/data/old/merge_miners.js"></script>
-<script src="https://wminerrc.github.io/calculator/data/components.js"></script>
-<!--===============================================================================================-->
-<script src="js/app.js"></script>
-<script src="js/firebase-db-service.js"></script>
-<!--===============================================================================================-->
-<script src="js/services.js"></script>
-<script src="js/user-miner-service.js"></script>
-<script src="js/miner-service.js"></script>
-<script src="js/dilsecenegi.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <title>RCMiner - Rollercoin Mağaza ve Kazanç Analizi</title>
+  <meta name="description" content="Rollercoin kazım gücü hesaplama aracı. Günlük, haftalık, aylık ve yıllık kazanç hesapla. Çekim süresi, miner bonusu ve gerçek zamanlı ağ gücü analizi.">
+  <meta name="author" content="Fatih ÇELİK">
+  <meta name="keywords" content="rollercoin hesaplama, rollercoin kazım gücü hesaplama, rollercoin calculator, rollercoin mining calculator, rollercoin bonus, rollercoin mağaza">
+  <link rel="shortcut icon" href="img/rcminers.png" type="image/x-icon">
 
-<style>
-/* =============================================================
-   BRAND NEW MINER LIST DESIGN SYSTEM - SYNTH-TECH HOLOGRAPHIC
-   ============================================================= */
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Rollercoin Hesaplama Aracı – Kazım Gücü & Kazanç Analizi">
+  <meta property="og:description" content="Rollercoin kazım gücünü hesapla, günlük kazancını öğren, mağaza ve oda durumunu analiz et.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rchesapla.github.io/">
+  <meta property="og:image" content="https://rchesapla.github.io/img/logo.png">
 
-#minerlistesi {
-  position: relative;
-  width: 100%;
-  margin-top: 30px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #f1f5f9;
-}
+  <!-- Harici Stiller & Fontlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
 
-/* Base Wrapper Container */
-.modern-miner-wrapper {
-  background: radial-gradient(130% 100% at 50% 0%, rgba(30, 27, 75, 0.7) 0%, rgba(13, 17, 30, 0.95) 70%, rgba(8, 11, 22, 0.98) 100%);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(139, 92, 246, 0.1);
-  backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-}
+  <!-- Yerel Stiller -->
+  <link rel="stylesheet" href="./css/anasablon.css">
+  <link rel="stylesheet" href="./css/genelkazanc.css">
+  <link rel="stylesheet" href="./css/profil.css">
+  <link rel="stylesheet" href="./css/tablo.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/minerlistesi.css">
+  <link rel="stylesheet" href="./css/ustbar.css">
+  <link rel="stylesheet" href="./css/altbar.css">
+  <link rel="stylesheet" href="./css/paracekmelistesi.css">
+  <link rel="stylesheet" href="./css/yukleniyor.css">
+  <link rel="stylesheet" href="./css/input.css">
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/checkbox.css">
 
-.modern-miner-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
+  <!-- Core Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spark-md5/3.0.0/spark-md5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-/* Redesigned Section Header */
-.modern-general-header {
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-.modern-general-header .rc-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 2px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #a5b4fc, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  <!-- Rollercoin Veri Dosyaları -->
+  <script src="https://wminerrc.github.io/calculator/data/basic_miners.js"></script>
+  <script src="https://wminerrc.github.io/calculator/data/merge_miners.js"></script>
+  <script src="https://wminerrc.github.io/calculator/data/old/merge_miners.js"></script>
+  <script src="https://wminerrc.github.io/calculator/data/components.js"></script>
 
-.modern-general-header .rc-title::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background: #06b6d4;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #06b6d4, 0 0 20px #06b6d4;
-  display: inline-block;
-}
+  <!-- Uygulama Scriptleri -->
+  <script src="js/app.js"></script>
+  <script src="js/firebase-db-service.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/user-miner-service.js"></script>
+  <script src="js/miner-service.js"></script>
+  <script src="js/dilsecenegi.js"></script>
 
-/* Filter Control Bar */
-.modern-filter-horizontal {
-  background: rgba(17, 24, 45, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
+  <style>
+    :root {
+      --bg-dark: #090d1a;
+      --card-bg: rgba(17, 24, 45, 0.85);
+      --border-color: rgba(139, 92, 246, 0.2);
+      --accent-cyan: #06b6d4;
+      --accent-purple: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
 
-.modern-filter-horizontal .filter-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 18px;
-}
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-.modern-filter-horizontal .filter-item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+    /* Topbar Geliştirmeleri */
+    .rc-topbar-roller {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 28px;
+      background: rgba(13, 18, 36, 0.9);
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.modern-filter-horizontal .filter-item label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+    .rc-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.modern-filter-horizontal .filter-item label::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: #8b5cf6;
-  border-radius: 50%;
-}
+    .rc-logo img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
 
-.modern-filter-horizontal .filter-item input,
-.modern-filter-horizontal .filter-item select {
-  background: rgba(10, 15, 30, 0.85);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  border-radius: 12px;
-  padding: 12px 14px;
-  color: #f8fafc;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13.5px;
-  font-weight: 600;
-  outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      background: linear-gradient(90deg, #fff, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
 
-.modern-filter-horizontal .filter-item input:focus,
-.modern-filter-horizontal .filter-item select:focus {
-  border-color: #06b6d4;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2), 0 0 15px rgba(6, 182, 212, 0.3);
-  background: rgba(15, 23, 42, 0.95);
-}
+    .topbar-clock-widget {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
 
-.modern-filter-horizontal .filter-footer {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+    .clock-time {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
 
-.total-badge-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #c084fc;
-}
+    .clock-date {
+      color: var(--text-muted);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: 10px;
+    }
 
-/* Card Grid Layout */
-.modern-miner-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 22px;
-  margin-bottom: 30px;
-}
+    /* Ana Filtreleme Alanı */
+    .modern-miner-wrapper {
+      background: radial-gradient(130% 100% at 50% 0%, rgba(30, 27, 75, 0.5) 0%, rgba(13, 17, 30, 0.95) 70%, rgba(8, 11, 22, 0.98) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 24px;
+      margin: 20px auto;
+      max-width: 1400px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
 
-/* Redesigned Miner Card Structure */
-.modern-miner-card {
-  background: linear-gradient(165deg, rgba(23, 31, 56, 0.9) 0%, rgba(13, 18, 36, 0.95) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
-  padding: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
+    .modern-filter-horizontal {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
 
-.modern-miner-card:hover {
-  transform: translateY(-8px) scale(1.015);
-  border-color: rgba(6, 182, 212, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.2);
-}
+    .filter-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
 
-/* Rarity Badges */
-.rarity-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  z-index: 3;
-}
+    .filter-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-.rarity-badge.common { background: rgba(148, 163, 184, 0.18); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.4); }
-.rarity-badge.legacy { background: rgba(217, 119, 6, 0.18); color: #fbbf24; border: 1px solid rgba(217, 119, 6, 0.4); }
-.rarity-badge.uncommon { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 0 10px rgba(16, 185, 129, 0.25); }
-.rarity-badge.rare { background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); box-shadow: 0 0 10px rgba(59, 130, 246, 0.25); }
-.rarity-badge.epic { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); box-shadow: 0 0 12px rgba(168, 85, 247, 0.3); }
-.rarity-badge.legendary { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.5); box-shadow: 0 0 14px rgba(245, 158, 11, 0.4); }
-.rarity-badge.unreal { background: rgba(236, 72, 153, 0.2); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.5); box-shadow: 0 0 16px rgba(236, 72, 153, 0.5); }
+    .filter-item label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-/* Level Tag */
-.level-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(6, 182, 212, 0.12);
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  color: #38bdf8;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  z-index: 3;
-}
+    .filter-item input,
+    .filter-item select {
+      background: rgba(10, 15, 30, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #f8fafc;
+      font-size: 13px;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.25s ease;
+    }
 
-/* Visual Stage / Image Stage */
-.miner-image {
-  margin: 36px 0 14px 0;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-  border-radius: 14px;
-}
+    .filter-item input:focus,
+    .filter-item select:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+    }
 
-.miner-image img {
-  max-width: 120px;
-  max-height: 90px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
-  transition: transform 0.4s ease;
-}
+    .modern-btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
 
-.modern-miner-card:hover .miner-image img {
-  transform: scale(1.1) translateY(-4px);
-  filter: drop-shadow(0 12px 24px rgba(6, 182, 212, 0.35));
-}
+    .action-btn {
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
 
-/* Card Title */
-.miner-name {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  letter-spacing: 0.5px;
-}
+    .action-btn:hover {
+      background: #334155;
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
 
-/* Mini Statistics Grid */
-.miner-stats {
-  background: rgba(9, 13, 26, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 12px 14px;
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+    /* Miner Kart Izgarası */
+    .modern-miner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
 
-.miner-stats .stat-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12.5px;
-}
+    .modern-miner-card {
+      background: linear-gradient(165deg, rgba(23, 31, 56, 0.9) 0%, rgba(13, 18, 36, 0.95) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      padding: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-.miner-stats .stat-row span:first-child {
-  color: #94a3b8;
-  font-weight: 600;
-}
+    .modern-miner-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.15);
+    }
 
-.miner-stats .stat-row span:last-child,
-.miner-stats .stat-row strong {
-  color: #f1f5f9;
-  font-weight: 700;
-}
+    /* Rarity Badges */
+    .rarity-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .rarity-badge.common { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid #64748b; }
+    .rarity-badge.uncommon { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #10b981; }
+    .rarity-badge.rare { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid #3b82f6; }
+    .rarity-badge.epic { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid #a855f7; }
+    .rarity-badge.legendary { background: rgba(245, 158, 11, 0.15); color: #fde047; border: 1px solid #f59e0b; }
+    .rarity-badge.unreal { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid #ec4899; }
 
-.miner-stats .bonus-value {
-  color: #f472b6 !important;
-  text-shadow: 0 0 8px rgba(244, 114, 182, 0.3);
-}
+    .level-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: #38bdf8;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      z-index: 2;
+    }
 
-.miner-stats .total-power-value {
-  color: #38bdf8 !important;
-  text-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
-}
+    .miner-image {
+      margin: 28px 0 10px 0;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Room & Market Status Styles */
-.room-status.room-have {
-  color: #34d399 !important;
-  font-weight: 700;
-}
-.room-status.room-not-have {
-  color: #f87171 !important;
-  font-weight: 700;
-}
+    .miner-image img {
+      max-width: 110px;
+      max-height: 85px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+      transition: transform 0.3s ease;
+    }
 
-.market-status.sellable {
-  color: #34d399 !important;
-  font-weight: 700;
-}
-.market-status.not-sellable {
-  color: #64748b !important;
-  font-weight: 600;
-}
+    .modern-miner-card:hover .miner-image img {
+      transform: scale(1.08);
+    }
 
-/* Action Button */
-.modern-add-btn {
-  width: 100%;
-  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-  border: none;
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 12px;
-  border-radius: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
-}
+    .miner-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.modern-add-btn:hover {
-  background: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
-  box-shadow: 0 6px 22px rgba(6, 182, 212, 0.5);
-  transform: translateY(-2px);
-}
+    .miner-stats {
+      background: rgba(9, 13, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+    }
 
-/* Pagination / Load More Block */
-.load-more-wrapper {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-}
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.load-more-btn {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
-  border: 1px solid rgba(6, 182, 212, 0.5);
-  color: #38bdf8;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 14px 40px;
-  border-radius: 30px;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
-}
+    .stat-row span:first-child {
+      color: var(--text-muted);
+    }
 
-.load-more-btn:hover {
-  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
-  color: #ffffff;
-  box-shadow: 0 0 30px rgba(6, 182, 212, 0.45);
-  transform: scale(1.05);
-}
+    .bonus-value { color: #f472b6 !important; font-weight: 700; }
+    .total-power-value { color: #38bdf8 !important; font-weight: 700; }
+    .room-have, .market-status.sellable { color: #34d399 !important; font-weight: 700; }
+    .room-not-have, .market-status.not-sellable { color: #f87171 !important; font-weight: 600; }
 
-.load-info {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #94a3b8;
-  letter-spacing: 0.5px;
-}
+    .modern-add-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+      border: none;
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 10px;
+      border-radius: 10px;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
 
-/* Responsive Adaptations */
-@media (max-width: 768px) {
-  .modern-miner-wrapper {
-    padding: 18px;
-    border-radius: 18px;
-  }
-  .modern-filter-horizontal .filter-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .modern-miner-grid {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 16px;
-  }
-}
+    .modern-add-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+    }
 
-@media (max-width: 480px) {
-  .modern-miner-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .footer-bottom {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
-<!--===============================================================================================-->
 <body ng-controller="MiningController">
-<!--===============================================================================================-->
 
 <div class="rc-wrapper">
 
@@ -487,329 +392,320 @@
   <header class="rc-topbar rc-topbar-roller">
     <div class="topbar-left">
       <div class="rc-logo">
-        <img src="img/rcminers.png">
+        <img src="img/rcminers.png" alt="RCMiner Logo">
         <span class="logo-text">RCMiner</span>
+      </div>
+    </div>
+    
+    <div class="topbar-right d-none d-md-flex">
+      <div class="topbar-clock-widget">
+        <i class="far fa-clock text-info"></i>
+        <span id="clockTime" class="clock-time">--:--:--</span>
+        <span id="clockDate" class="clock-date">--</span>
       </div>
     </div>
   </header>
 
   <!-- ANA İÇERİK -->
-  <main class="rc-main">
-
-    <!-- SAĞ PANEL -->
+  <main class="rc-main container-fluid px-lg-4">
     <section class="rc-content">
-          <!-- Horizontal Filtering Controls -->
-          <div class="modern-filter-horizontal">
 
-            <div class="alert alert-warning text-center my-2" 
-                 ng-if="!isLoadedUser" 
-                 style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde047; border-radius: 12px; padding: 12px; font-size: 13px;">
-              <i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>
-              Oda durumunu görebilmek için lütfen bir kullanıcı adı aratın ve profili yükleyin.
-            </div>
+      <div class="modern-miner-wrapper">
 
-            <div class="filter-row">
-              <div class="filter-item">
-                <label><i class="fa-solid fa-circle-user"></i>RC Kul. Adı</label>
-            <div class="rc-input-group" style="position: relative;">
-              
-              <div class="input-with-history" style="position: relative;">
+        <!-- FİLTRELEME ALANI -->
+        <div class="modern-filter-horizontal">
+
+          <!-- Kullanıcı Seçilmedi Uyarısı -->
+          <div class="alert alert-warning text-center my-2" 
+               ng-if="!isLoadedUser" 
+               style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #fde047; border-radius: 10px; padding: 10px; font-size: 13px;">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            Oda durumunu analiz edebilmek için lütfen kullanıcı adınızı aratarak profilinizi seçin.
+          </div>
+
+          <div class="filter-row">
+            <!-- RC Kullanıcı Adı -->
+            <div class="filter-item">
+              <label><i class="fa-solid fa-circle-user"></i> Kullanıcı Adı</label>
+              <div class="rc-input-group position-relative">
                 <input type="text"
+                       class="w-100"
                        ng-model="userSearchText" 
                        placeholder="Örn: FthCLK" 
                        typeahead-wait-ms="200"
                        uib-typeahead="player as player.code for player in getPlayerByName($viewValue)"
                        typeahead-no-results="playerSearchNoResults"
-                       typeahead-on-select="onSelectPlayer($item, $model, $label, $event)"
+                       typeahead-on-select="onSelectPlayer($item,$model, $label,$event)"
                        typeahead-loading="loading"
                        ng-focus="onInputFocus()"
                        ng-blur="onInputBlur()"
                        autocomplete="off"/>
-              </div>
 
-              <div class="player-no-results" ng-if="playerSearchNoResults">
-                <div class="no-results-icon">🔍</div>
-                <h4 class="no-results-title">Oyuncu bulunamadı</h4>
-                <p class="no-results-text">
-                  Aradığınız kullanıcı mevcut değil.
-                  Lütfen farklı bir isim deneyin.
-                </p>
+                <div class="player-no-results position-absolute bg-dark p-2 border rounded mt-1 w-100" ng-if="playerSearchNoResults" style="z-index: 10;">
+                  <small class="text-danger"><i class="fas fa-search me-1"></i>Oyuncu bulunamadı.</small>
+                </div>
               </div>
             </div>
-              </div>
-              <div class="filter-item">
-                <label><i class="fas fa-search"></i> Miner Adı</label>
-                <input type="text" 
-                       ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)" 
-                       ng-model="allMinerNameSearch" 
-                       placeholder="Örn: YMCA">
-              </div>
 
-              <div class="filter-item">
-                <label><i class="fas fa-layer-group"></i> Seviye Durumu</label>
-                <select ng-model="allMinersRarity" 
-                        ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
-                  <option value="all">Hepsini göster</option>
-                  <option value="common">Common</option>
-                  <option value="legacy">Legacy</option>
-                  <option value="uncommon">Uncommon</option>
-                  <option value="rare">Rare</option>
-                  <option value="epic">Epic</option>
-                  <option value="legendary">Legendary</option>
-                  <option value="unreal">Unreal</option>
-                </select>
-              </div>
-
-              <div class="filter-item">
-                <label><i class="fas fa-store"></i> Mağaza Durumu</label>
-                <select ng-model="allMinerNegotiableStatus" 
-                        ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
-                  <option value="all">Hepsini göster</option>
-                  <option value="inegotiable">Satılamaz</option>
-                  <option value="negotiable">Satılabilir</option>
-                </select>
-              </div>
-
-              <div class="filter-item" ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
-                <label><i class="fas fa-door-open"></i> Oda Durumu</label>
-                <select ng-model="allMinerPosessionStatus" 
-                        ng-disabled="!isLoadedUser" 
-                        ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
-                  <option value="all">Hepsini göster</option>
-                  <option value="mine">Var</option>
-                  <option value="not_mine">Yok</option>
-                </select>
-              </div>
-
-              <div class="filter-item">
-                <label><i class="fas fa-box"></i> Paketler</label>
-                <select ng-model="allMinerCollectionId" 
-                        ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
-                  <option value="all">Hepsini göster</option>
-                  <option ng-repeat="collection in collections" value="{{collection.id}}">{{collection.name}}</option>
-                </select>
-              </div>
+            <!-- Miner Adı -->
+            <div class="filter-item">
+              <label><i class="fas fa-search"></i> Miner Adı</label>
+              <input type="text" 
+                     ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)" 
+                     ng-model="allMinerNameSearch" 
+                     placeholder="Örn: YMCA">
             </div>
-<div class=" modern-btn-group" style="  gap: 8px;">
-			
-            <button class="rc-modern-btn room-link-btn" 
-                    ng-click="resetValues()"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer;  align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;">
-              <i class="fas fa-sync-alt" style="color: #4f80ff;"></i>
-              <span>Verileri Güncelle</span>
+
+            <!-- Nadirlik / Seviye Durumu -->
+            <div class="filter-item">
+              <label><i class="fas fa-layer-group"></i> Seviye</label>
+              <select ng-model="allMinersRarity" 
+                      ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+                <option value="all">Tümü</option>
+                <option value="common">Common</option>
+                <option value="legacy">Legacy</option>
+                <option value="uncommon">Uncommon</option>
+                <option value="rare">Rare</option>
+                <option value="epic">Epic</option>
+                <option value="legendary">Legendary</option>
+                <option value="unreal">Unreal</option>
+              </select>
+            </div>
+
+            <!-- Mağaza Durumu -->
+            <div class="filter-item">
+              <label><i class="fas fa-store"></i> Mağaza</label>
+              <select ng-model="allMinerNegotiableStatus" 
+                      ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+                <option value="all">Tümü</option>
+                <option value="inegotiable">Satılamaz</option>
+                <option value="negotiable">Satılabilir</option>
+              </select>
+            </div>
+
+            <!-- Oda Durumu -->
+            <div class="filter-item" ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
+              <label><i class="fas fa-door-open"></i> Oda Durumu</label>
+              <select ng-model="allMinerPosessionStatus" 
+                      ng-disabled="!isLoadedUser" 
+                      ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+                <option value="all">Tümü</option>
+                <option value="mine">Odamda Var</option>
+                <option value="not_mine">Odamda Yok</option>
+              </select>
+            </div>
+
+            <!-- Koleksiyon / Paketler -->
+            <div class="filter-item">
+              <label><i class="fas fa-box"></i> Koleksiyon</label>
+              <select ng-model="allMinerCollectionId" 
+                      ng-change="filterAllMiners(allMinerNameSearch, allMinersRarity, {min:allMinerMinBonusSearch, max:allMinerMaxBonusSearch}, allMinerNegotiableStatus, allMinerPosessionStatus, allMinerCollectionId, allMinerMinPowerSearch, allMinerMaxPowerSearch, allMinerCells, allMinerMinImpact)">
+                <option value="all">Tümü</option>
+                <option ng-repeat="collection in collections" value="{{collection.id}}">{{collection.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- İşlem Butonları -->
+          <div class="modern-btn-group">
+            <button class="action-btn" ng-click="resetValues()">
+              <i class="fas fa-sync-alt text-primary"></i>
+              <span>Verileri Yenile</span>
             </button>
 
-            <button class="rc-modern-btn room-link-btn" 
+            <button class="action-btn" 
                     ng-click="openUserRoomLink()" 
                     ng-disabled="!isLoadedUser"
-                    style="background: #2b3245; color: #fff; border: 1px solid #3b4259; padding: 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; transition: all 0.2s;"
                     ng-style="!isLoadedUser && {'opacity': '0.5', 'cursor': 'not-allowed'}">
-              <i class="fas fa-external-link-alt" style="color: #4f80ff;"></i>
+              <i class="fas fa-external-link-alt text-info"></i>
               <span>Odayı Görüntüle</span>
             </button>
-          </div>
-            <div class="filter-footer">
-              <span class="total-badge-chip">
-                <i class="fas fa-microchip"></i> Toplam: {{allMiners.length}} Miner
+
+            <button class="action-btn" onclick="takeScreenshot()">
+              <i class="fas fa-camera text-warning"></i>
+              <span>Ekran Görüntüsü Al</span>
+            </button>
+
+            <div class="ms-auto d-flex align-items-center">
+              <span class="badge bg-dark border border-secondary text-info px-3 py-2">
+                <i class="fas fa-microchip me-1"></i> Toplam: {{allMiners.length}} Miner
               </span>
             </div>
-			
           </div>
-      <!-- MINER LİSTESİ REDESIGNED SECTION -->
-      <div id="minerlistesi">
-        <div class="modern-miner-wrapper">
 
+        </div>
 
-
-          <!-- Miner Grid Container -->
-          <div class="modern-miner-grid">
-            <div class="modern-miner-card" ng-repeat="miner in allMiners | orderBy:'power':true | limitTo:visibleItems">
-              <!-- Rarity Badge -->
-              <div class="rarity-badge {{miner.rarity}}">
-                {{miner.rarity | uppercase}}
-              </div>
-
-              <!-- Level Badge -->
-              <div class="level-badge level-{{miner.level}}">
-                ⭐ LVL {{miner.level + 1}}
-              </div>
-
-              <!-- Image Pedestal -->
-              <div class="miner-image">
-                <img src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608">
-              </div>
-
-              <!-- Miner Name -->
-              <div class="miner-name">
-                {{miner.name.en}}
-              </div>
-
-              <!-- Stats Block -->
-              <div class="miner-stats">
-                <div class="stat-row">
-                  <span>⚡ Güç</span>
-                  <span>
-                    {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}}
-                    {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
-                  </span>
-                </div>
-
-                <div class="stat-row">
-                  <span>🎁 Bonus</span>
-                  <span class="bonus-value">
-                    {{(miner.bonus_power / 100)}}%
-                  </span>
-                </div>
-
-                <div class="stat-row">
-                  <span>⚡ Bonuslu Güç</span>
-                  <span class="total-power-value">
-                    {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').value.toFixed(2)}}
-                    {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').unit}}
-                  </span>
-                </div>
-
-                <div class="stat-row">
-                  <span>🏠 Oda Durumu</span>
-                  <span class="room-status"
-                        ng-class="{
-                          'room-have': miner.already_have,
-                          'room-not-have': !miner.already_have
-                        }">
-                    {{ miner.already_have ? 'Var' : 'Yok' }}
-                  </span>
-                </div>
-
-                <div class="stat-row">
-                  <span>💰 Mağaza Durumu</span>
-                  <span class="market-status"
-                        ng-class="{
-                          'sellable': miner.is_can_be_sold_on_mp,
-                          'not-sellable': !miner.is_can_be_sold_on_mp
-                        }">
-                    {{ miner.is_can_be_sold_on_mp ? 'Satılır' : 'Satılamaz' }}
-                  </span>
-                </div>
-              </div>
-
-              <!-- Action Link -->
-              <button class="modern-add-btn" ng-click="openBuyLink(miner)">
-                <i class="fas fa-shopping-cart" style="margin-right: 6px;"></i> Mağazaya Git
-              </button>
+        <!-- MINER LİSTESİ GRID -->
+        <div class="modern-miner-grid">
+          <div class="modern-miner-card" ng-repeat="miner in allMiners | orderBy:'power':true | limitTo:visibleItems">
+            
+            <!-- Nadirlik Rozeti -->
+            <div class="rarity-badge {{miner.rarity}}">
+              {{miner.rarity}}
             </div>
 
-            <!-- Pagination Control -->
-            <div class="load-more-wrapper" ng-init="visibleItems = 12">
-              <button class="load-more-btn"
-                      ng-click="visibleItems = visibleItems + 6"
-                      ng-hide="visibleItems >= allMiners.length">
-                <i class="fas fa-chevron-down" style="margin-right: 6px;"></i> Daha Fazla Göster
-              </button>
+            <!-- Seviye Rozeti -->
+            <div class="level-badge">
+              ⭐ LVL {{miner.level + 1}}
+            </div>
 
-              <div class="load-info">
-                {{ (visibleItems < allMiners.length) ? visibleItems : allMiners.length }} / {{allMiners.length}} Miner gösteriliyor
+            <!-- Miner Görseli -->
+            <div class="miner-image">
+              <img ng-src="https://static.rollercoin.com/static/img/market/miners/{{miner.filename}}.gif?v=1707996476608" 
+                   alt="{{miner.name.en}}"
+                   loading="lazy">
+            </div>
+
+            <!-- İsim -->
+            <div class="miner-name" title="{{miner.name.en}}">
+              {{miner.name.en}}
+            </div>
+
+            <!-- Değerler / Özellikler -->
+            <div class="miner-stats">
+              <div class="stat-row">
+                <span>⚡ Temel Güç</span>
+                <strong>
+                  {{chooseBestHashRateUnit(miner.power, 'GH/s').value.toFixed(2)}}
+                  {{chooseBestHashRateUnit(miner.power, 'GH/s').unit}}
+                </strong>
               </div>
+
+              <div class="stat-row">
+                <span>🎁 Bonus</span>
+                <span class="bonus-value">{{(miner.bonus_power / 100)}}%</span>
+              </div>
+
+              <div class="stat-row">
+                <span>⚡ Bonuslu Güç</span>
+                <span class="total-power-value">
+                  {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').value.toFixed(2)}}
+                  {{chooseBestHashRateUnit(miner.power * (1 + (miner.bonus_power / 10000)), 'GH/s').unit}}
+                </span>
+              </div>
+
+              <div class="stat-row">
+                <span>🏠 Oda Durumu</span>
+                <span ng-class="miner.already_have ? 'room-have' : 'room-not-have'">
+                  {{ miner.already_have ? 'Mevcut' : 'Yok' }}
+                </span>
+              </div>
+
+              <div class="stat-row">
+                <span>💰 Pazar</span>
+                <span class="market-status" ng-class="miner.is_can_be_sold_on_mp ? 'sellable' : 'not-sellable'">
+                  {{ miner.is_can_be_sold_on_mp ? 'Satılabilir' : 'Satılamaz' }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Satın Alma Butonu -->
+            <button class="modern-add-btn" ng-click="openBuyLink(miner)">
+              <i class="fas fa-shopping-cart me-1"></i> Mağazada Bul
+            </button>
+          </div>
+
+          <!-- Sayfalama / Daha Fazla Yükle -->
+          <div class="w-100 text-center mt-4" style="grid-column: 1 / -1;" ng-init="visibleItems = 12">
+            <button class="btn btn-outline-info px-4 py-2 rounded-pill font-monospace"
+                    ng-click="visibleItems = visibleItems + 12"
+                    ng-hide="visibleItems >= allMiners.length">
+              <i class="fas fa-chevron-down me-2"></i>Daha Fazla Göster ({{allMiners.length - visibleItems}} kaldı)
+            </button>
+            <div class="text-muted small mt-2">
+              {{ (visibleItems < allMiners.length) ? visibleItems : allMiners.length }} / {{allMiners.length}} Miner listelendi
             </div>
           </div>
         </div>
+
       </div>
 
     </section>
   </main>
+
+  <!-- ALT BİLGİ (FOOTER) -->
+  <footer class="footer-bottom">
+    © 2026 RCHesapla • Rollercoin Hesaplama ve Analiz Aracı
+  </footer>
+
 </div>
 
-<!-- FOOTER SECTION -->
-<footer class="rc-footer rc-footer-roller">
-  <div class="footer-bottom">
-    © 2026 RCHesapla • Rollercoin Hesaplama Aracı
-  </div>
-</footer>
-
+<!-- Sayfa İçi Araçlar & Saat Scripti -->
 <script>
 async function takeScreenshot() {
-  const element = document.querySelector('.rc-content');
+  const element = document.querySelector('.modern-miner-wrapper');
+  if (!element) return;
+
   const usernameInput = document.querySelector('input[ng-model="userSearchText"]');
   const username = usernameInput && usernameInput.value ? usernameInput.value : "Misafir";
-  const now = new Date();
-  const formattedDate = now.toLocaleString("tr-TR");
+  const formattedDate = new Date().toLocaleString("tr-TR");
 
   const header = document.createElement("div");
-  header.style.padding = "15px";
+  header.style.padding = "14px";
   header.style.background = "#0f172a";
-  header.style.color = "white";
+  header.style.color = "#38bdf8";
   header.style.fontSize = "14px";
   header.style.textAlign = "center";
   header.style.borderBottom = "1px solid #334155";
-  header.innerHTML = `
-    <strong>RCHesapla Kazanç Analizi</strong><br>
-    👤 Kullanıcı: ${username} <br>
-    📅 ${formattedDate}
-  `;
+  header.innerHTML = `<strong>RCHesapla Miner Analizi</strong> | Kullanıcı: <b>${username}</b> | Tarih: ${formattedDate}`;
 
   element.prepend(header);
 
-  const canvas = await html2canvas(element, {
-    backgroundColor: "#0f172a",
-    scale: 2,
-    useCORS: true
-  });
+  try {
+    const canvas = await html2canvas(element, {
+      backgroundColor: "#090d1a",
+      scale: 2,
+      useCORS: true
+    });
 
-  header.remove();
+    header.remove();
 
-  canvas.toBlob(async function(blob) {
-    if (navigator.share && navigator.canShare) {
-      const file = new File([blob], "rchesapla-analiz.png", { type: "image/png" });
-      if (navigator.canShare({ files: [file] })) {
-        await navigator.share({
-          title: "RCHesapla Kazanç Analizi",
-          text: "Kazım gücü analizim 👇",
-          files: [file]
-        });
-        return;
+    canvas.toBlob(async function(blob) {
+      if (!blob) return;
+      if (navigator.share && navigator.canShare) {
+        const file = new File([blob], "rchesapla-analiz.png", { type: "image/png" });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: "RCHesapla Kazanç Analizi",
+            text: "Rollercoin miner analizim:",
+            files: [file]
+          });
+          return;
+        }
       }
-    }
 
-    const link = document.createElement('a');
-    link.download = "rchesapla-analiz.png";
-    link.href = URL.createObjectURL(blob);
-    link.click();
-  });
-}
-
-let clockMode = "TR";
-
-function setClockMode(mode) {
-  clockMode = mode;
-  updateClock();
-}
-
-function getTimeZone() {
-  if (clockMode === "TR") return "Europe/Istanbul";
-  if (clockMode === "UTC") return "UTC";
-  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const link = document.createElement('a');
+      link.download = "rchesapla-analiz.png";
+      link.href = URL.createObjectURL(blob);
+      link.click();
+    });
+  } catch (err) {
+    console.error("Screenshot error:", err);
+    header.remove();
+  }
 }
 
 function updateClock() {
   const now = new Date();
-  const timeZone = getTimeZone();
+  const timeEl = document.getElementById("clockTime");
+  const dateEl = document.getElementById("clockDate");
 
-  const time = new Intl.DateTimeFormat("tr-TR", {
-    timeZone,
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  }).format(now);
+  if (timeEl) {
+    timeEl.textContent = new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    }).format(now);
+  }
 
-  const date = new Intl.DateTimeFormat("tr-TR", {
-    timeZone,
-    weekday: "long",
-    day: "2-digit",
-    month: "long",
-    year: "numeric"
-  }).format(now);
-
-  document.getElementById("clockTime").textContent = time;
-  document.getElementById("clockDate").textContent = date;
+  if (dateEl) {
+    dateEl.textContent = new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul",
+      day: "2-digit",
+      month: "short"
+    }).format(now);
+  }
 }
 
 setInterval(updateClock, 1000);
