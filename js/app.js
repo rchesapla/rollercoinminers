@@ -647,7 +647,7 @@ $scope.hasUserParam = !!urlParams.get('user');
     };
 
     $scope.onSelectPlayer = async function($item) {
-        let new_url = window.location.pathname+"?user=" + $item.code;
+        let new_url = window.location.pathname+"profil" + $item.code;
         if(loaded_miners) {
             new_url+= '&miners=' + loaded_miners;
         }
