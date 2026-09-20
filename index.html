@@ -80,6 +80,7 @@
   --matrix-green: #10b981;
   --matrix-red: #f43f5e;
   --matrix-gold: #f59e0b;
+  --matrix-yt: #ff0033;
 }
 
 body {
@@ -135,6 +136,221 @@ body {
   border: 1px solid rgba(34, 211, 238, 0.25);
   padding: 4px 12px;
   border-radius: 6px;
+}
+
+/* YOUTUBE MATRIX HUB */
+.yt-hub-dock {
+  background: linear-gradient(135deg, rgba(255, 0, 51, 0.04) 0%, #121824 100%);
+  border: 1px solid rgba(255, 0, 51, 0.2);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.yt-hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--matrix-border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.yt-channel-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.yt-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--matrix-yt);
+  object-fit: cover;
+}
+
+.yt-title-group h4 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.yt-title-group p {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.yt-sub-btn {
+  background: var(--matrix-yt);
+  color: #fff !important;
+  border: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 7px 16px;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: 0.2s transform, 0.2s background;
+}
+
+.yt-sub-btn:hover {
+  background: #e6002c;
+  transform: scale(1.03);
+}
+
+.yt-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.yt-video-item {
+  background: #080a0f;
+  border: 1px solid var(--matrix-border);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s transform, 0.2s border-color;
+  text-decoration: none !important;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.yt-video-item:hover {
+  border-color: var(--matrix-yt);
+  transform: translateY(-2px);
+}
+
+.yt-thumb-box {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.yt-thumb-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.yt-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 32px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  transition: 0.2s transform, 0.2s color;
+}
+
+.yt-video-item:hover .yt-play-icon {
+  transform: translate(-50%, -50%) scale(1.15);
+  color: var(--matrix-yt);
+}
+
+.yt-video-info {
+  padding: 10px;
+}
+
+.yt-video-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.yt-video-desc {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* MODAL VIDEO PLAYER */
+.yt-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.yt-modal-content {
+  width: 90%;
+  max-width: 800px;
+  background: #121824;
+  border: 1px solid rgba(255, 0, 51, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.yt-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--matrix-border);
+}
+
+.yt-modal-header span {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.yt-modal-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.yt-modal-close:hover {
+  color: #fff;
+}
+
+.yt-modal-body {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.yt-modal-body iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* INPUT DOKUSU */
@@ -390,12 +606,21 @@ body {
 <div class="rc-wrapper">
 
   <!-- ÜST BAR -->
-  <header class="rc-topbar rc-topbar-roller">
+  <header class="rc-topbar rc-topbar-roller d-flex justify-content-between align-items-center px-3">
     <div class="topbar-left">
       <div class="rc-logo">
         <img src="img/rcminers.png" alt="RCMiner">
         <span class="logo-text">RCMiner</span>
       </div>
+    </div>
+    <!-- Üst Bar YouTube Hızlı Bağlantı -->
+    <div class="topbar-right">
+      <a href="https://www.youtube.com/@FatihCELIK" target="_blank" class="yt-sub-btn">
+        <i class="fab fa-youtube"></i> Fatih ÇELİK
+      </a>
+      <a href="https://www.youtube.com/@bilgilendiriyor" target="_blank" class="yt-sub-btn">
+        <i class="fab fa-youtube"></i> Bilgilendiriyor
+      </a>
     </div>
   </header>
 
@@ -613,6 +838,19 @@ body {
   </main>
 </div>
 
+<!-- YOUTUBE VIDEO OYNATICI MODAL -->
+<div id="ytModal" class="yt-modal" style="display: none;">
+  <div class="yt-modal-content">
+    <div class="yt-modal-header">
+      <span id="ytModalTitle">Video Başlığı</span>
+      <button class="yt-modal-close" onclick="closeVideoModal()">&times;</button>
+    </div>
+    <div class="yt-modal-body">
+      <iframe id="ytIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 <!-- ALT BİLGİ -->
 <footer class="rc-footer rc-footer-roller">
   <div class="footer-bottom">
@@ -621,6 +859,37 @@ body {
 </footer>
 
 <script>
+// Video Oynatıcı Modal Fonksiyonları
+function openVideoModal(videoId, videoTitle) {
+  const modal = document.getElementById('ytModal');
+  const iframe = document.getElementById('ytIframe');
+  const title = document.getElementById('ytModalTitle');
+
+  if (modal && iframe && title) {
+    title.innerText = videoTitle || 'Video Rehber';
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+    modal.style.display = 'flex';
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('ytModal');
+  const iframe = document.getElementById('ytIframe');
+
+  if (modal && iframe) {
+    iframe.src = '';
+    modal.style.display = 'none';
+  }
+}
+
+// Modal dışına tıklayınca kapatma
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('ytModal');
+  if (e.target === modal) {
+    closeVideoModal();
+  }
+});
+
 async function takeScreenshot() {
   const element = document.getElementById('minerlistesi');
   if (!element) return;
